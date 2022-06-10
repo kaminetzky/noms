@@ -21,6 +21,20 @@ class FoodsController < ApplicationController
     end
   end
 
+  def edit
+    @food = Food.find(params[:id])
+  end
+
+  def update
+    @food = Food.find(params[:id])
+
+    if @food.update(food_params)
+      redirect_to @food
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
     def food_params
       params.require(:food).permit(:name, :description, :serving_size,
