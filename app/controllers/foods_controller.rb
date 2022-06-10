@@ -6,4 +6,24 @@ class FoodsController < ApplicationController
   def show
     @food = Food.find(params[:id])
   end
+
+  def new
+    @food = Food.new
+  end
+
+  def create
+    @food = Food.new(food_params)
+
+    if @food.save
+      redirect_to @food
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  private
+    def food_params
+      params.require(:food).permit(:name, :description, :serving_size,
+                                   :serving_unit, :calories, :protein)
+    end
 end

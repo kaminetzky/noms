@@ -3,9 +3,9 @@
 <ul>
   <% @foods.each do |food| %>
     <li>
-      <a href="/foods/<%= food.id %>">
-        <%= food.name %>
-      </a>
+      <%= link_to food.name, food %>
     </li>
   <% end %>
 </ul>
+
+<%= link_to "New food", new_food_path %>
