@@ -1,11 +1,15 @@
 <h1><%= @food.name %></h1>
 
 <p><strong>Description:</strong> <%= @food.description %></p>
-<p><strong>Calories:</strong> <%= @food.calories %></p>
-<p><strong>Protein:</strong> <%= @food.protein %></p>
 <p><strong>Serving size:</strong> <%= @food.serving_size %></p>
 <p><strong>Serving unit:</strong> <%= @food.serving_unit %></p>
+<p><strong>Calories:</strong> <%= @food.calories %></p>
+<p><strong>Protein:</strong> <%= @food.protein %></p>
 
 <ul>
   <li><%= link_to "Edit", edit_food_path(@food) %></li>
+  <li><%= link_to "Destroy", food_path(@food), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
 </ul>
