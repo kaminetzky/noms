@@ -1,4 +1,6 @@
 class Food < ApplicationRecord
+  has_many :meals
+
   validates :name, presence: true
   validates :serving_size, comparison: { greater_than_or_equal_to: 0 },
     allow_nil: true
