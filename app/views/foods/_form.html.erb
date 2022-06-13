@@ -17,7 +17,7 @@
 
   <div>
     <%= form.label :serving_size %><br>
-    <%= form.number_field :serving_size %>
+    <%= form.number_field :serving_size, step: 0.1 %>
     <% food.errors.full_messages_for(:serving_size).each do |message| %>
       <div><%= message %></div>
     <% end %>
@@ -33,7 +33,7 @@
 
   <div>
     <%= form.label :calories %><br>
-    <%= form.number_field :calories %>
+    <%= form.number_field :calories, step: 0.1 %>
     <% food.errors.full_messages_for(:calories).each do |message| %>
       <div><%= message %></div>
     <% end %>
@@ -41,7 +41,7 @@
 
   <div>
     <%= form.label :protein %><br>
-    <%= form.number_field :protein %>
+    <%= form.number_field :protein, step: 0.1 %>
     <% food.errors.full_messages_for(:protein).each do |message| %>
       <div><%= message %></div>
     <% end %>

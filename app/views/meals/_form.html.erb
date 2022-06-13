@@ -9,7 +9,7 @@
 
   <div>
     <%= form.label :servings %><br>
-    <%= form.number_field :servings %>
+    <%= form.number_field :servings, step: 0.1  %>
     <% meal.errors.full_messages_for(:servings).each do |message| %>
       <div><%= message %></div>
     <% end %>
