@@ -1,8 +1,14 @@
 <h1><%= @food.name %></h1>
 
-<p><strong>Description:</strong> <%= @food.description %></p>
+<% unless @food.description.blank?%>
+  <p><strong>Description:</strong> <%= @food.description %></p>
+<% end %>
+<% unless @food.serving_size.blank?%>
 <p><strong>Serving size:</strong> <%= @food.serving_size %></p>
+<% end %>
+<% unless @food.serving_unit.blank?%>
 <p><strong>Serving unit:</strong> <%= @food.serving_unit %></p>
+<% end %>
 <p><strong>Calories:</strong> <%= @food.calories %></p>
 <p><strong>Protein:</strong> <%= @food.protein %></p>
 
