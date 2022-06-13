@@ -1,6 +1,8 @@
 <h1><%= @meal.food.name %></h1>
 
+<% unless @food.description.blank?%>
 <p><strong>Description:</strong> <%= @meal.description %></p>
+<% end %>
 <p><strong>Servings:</strong> <%= @meal.servings %></p>
 <p><strong>Datetime:</strong> <%= @meal.consumed_on %></p>
 <p><strong>Food:</strong> <%= @meal.food %></p>
