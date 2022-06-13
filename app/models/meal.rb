@@ -6,7 +6,8 @@ class Meal < ApplicationRecord
   validates :food_id, presence: true
 
   def self.today
-    where("consumed_on >= ?", Time.now.beginning_of_day)
+    # Day starts at 6 AM
+    where("consumed_on >= ?", Time.now.beginning_of_day + 6.hours)
   end
 
   def calories
