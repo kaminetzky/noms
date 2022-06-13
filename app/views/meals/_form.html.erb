@@ -1,5 +1,14 @@
 <%= form_with model: meal do |form| %>
   <div>
+    <%= form.label :food_id %><br>
+    <%= form.select :food_id, foods.map {|a| [a.name, a.id]},
+      include_blank: true %>
+    <% meal.errors.full_messages_for(:food_id).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
     <%= form.label :description %><br>
     <%= form.text_area :description %>
     <% meal.errors.full_messages_for(:description).each do |message| %>
@@ -19,14 +28,6 @@
     <%= form.label :consumed_on %><br>
     <%= form.datetime_local_field :consumed_on, step: 1 %>
     <% meal.errors.full_messages_for(:consumed_on).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= form.label :food_id %><br>
-    <%= form.select :food_id, foods.map {|a| [a.name, a.id]} %>
-    <% meal.errors.full_messages_for(:food_id).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
