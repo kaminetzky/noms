@@ -8,7 +8,7 @@ class MealsController < ApplicationController
   end
 
   def new
-    @meal = Meal.new(consumed_on: Time.now)
+    @meal = Meal.new(servings: 1, consumed_on: Time.now)
     @foods = Food.all
   end
 
