@@ -8,11 +8,13 @@ class MealsController < ApplicationController
   end
 
   def new
-    @meal = Meal.new
+    @meal = Meal.new(consumed_on: Time.now)
+    @foods = Food.all
   end
 
   def create
     @meal = Meal.new(meal_params)
+    @foods = Food.all
 
     if @meal.save
       redirect_to @meal
@@ -23,10 +25,12 @@ class MealsController < ApplicationController
 
   def edit
     @meal = Meal.find(params[:id])
+    @foods = Food.all
   end
 
   def update
     @meal = Meal.find(params[:id])
+    @foods = Food.all
 
     if @meal.update(meal_params)
       redirect_to @meal
@@ -45,6 +49,6 @@ class MealsController < ApplicationController
   private
     def meal_params
       params.require(:meal).permit(:description, :servings,
-                                   :consumption_datetime, :food)
+                                   :consumed_on, :food_id)
     end
 end
