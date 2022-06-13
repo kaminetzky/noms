@@ -1,11 +1,12 @@
 <h1><%= @meal.food.name %></h1>
 
-<% unless @food.description.blank?%>
+<% unless @meal.description.blank?%>
 <p><strong>Description:</strong> <%= @meal.description %></p>
 <% end %>
 <p><strong>Servings:</strong> <%= @meal.servings %></p>
 <p><strong>Datetime:</strong> <%= @meal.consumed_on %></p>
-<p><strong>Food:</strong> <%= @meal.food %></p>
+<p><strong>Total calories:</strong> <%= @meal.calories %></p>
+<p><strong>Total protein:</strong> <%= @meal.protein %></p>
 
 <ul>
   <li><%= link_to "Edit", edit_meal_path(@meal) %></li>
