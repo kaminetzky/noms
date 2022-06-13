@@ -5,6 +5,10 @@ class Meal < ApplicationRecord
   validates :consumed_on, presence: true
   validates :food_id, presence: true
 
+  def self.today
+    where("consumed_on >= ?", Time.now.beginning_of_day)
+  end
+
   def calories
     servings * food.calories
   end
