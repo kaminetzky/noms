@@ -1,2 +1,10 @@
-<h1>Dashboards#show</h1>
-<p>Find me in app/views/dashboards/show.html.erb</p>
+<h1>Dashboard</h1>
+<p><strong>Food count:</strong> <%= @foods.count %></p>
+<p><strong>Meal count:</strong> <%= @meals.count %></p>
+
+<ul>
+  <li><%= link_to "All foods", foods_path %></li>
+  <li><%= link_to "All meals", meals_path %></li>
+  <li><%= link_to "New food", new_food_path %></li>
+  <li><%= link_to "New meal", new_meal_path %></li>
+</ul>
