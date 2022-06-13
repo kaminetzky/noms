@@ -3,7 +3,7 @@ class CreateMeals < ActiveRecord::Migration[7.0]
     create_table :meals do |t|
       t.text :description
       t.float :servings
-      t.datetime :consumption_datetime
+      t.datetime :consumed_on
       t.references :food, null: false, foreign_key: true
 
       t.timestamps

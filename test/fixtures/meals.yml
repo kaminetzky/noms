@@ -3,11 +3,11 @@
 one:
   description: MyText
   servings: 1.5
-  consumption_datetime: 2022-06-10 23:03:31
+  consumed_on: 2022-06-10 23:03:31
   food: one
 
 two:
   description: MyText
   servings: 1.5
-  consumption_datetime: 2022-06-10 23:03:31
+  consumed_on: 2022-06-10 23:03:31
   food: two
