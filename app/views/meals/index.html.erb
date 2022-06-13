@@ -3,7 +3,7 @@
 <ul>
   <% @meals.each do |meal| %>
     <li>
-      <%= link_to meal.food.name, meal %>
+      <%= link_to "#{meal.food.name} (#{time_ago_in_words meal.consumed_on} ago)", meal %>
     </li>
   <% end %>
 </ul>
