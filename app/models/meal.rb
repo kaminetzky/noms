@@ -7,7 +7,8 @@ class Meal < ApplicationRecord
 
   def self.today
     # Day starts at 6 AM
-    where("consumed_on >= ?", Time.zone.now.beginning_of_day + 6.hours)
+    where("consumed_on >= ?",
+          (Time.zone.now - 6.hours).beginning_of_day + 6.hours)
   end
 
   def calories
