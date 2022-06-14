@@ -1,6 +1,6 @@
 class MealsController < ApplicationController
   def index
-    @meals = Meal.all
+    @meals = Meal.order(consumed_on: :desc)
   end
 
   def show
@@ -9,12 +9,12 @@ class MealsController < ApplicationController
 
   def new
     @meal = Meal.new(servings: 1, consumed_on: Time.now)
-    @foods = Food.all
+    @foods = Food.order(:name)
   end
 
   def create
     @meal = Meal.new(meal_params)
-    @foods = Food.all
+    @foods = Food.order(:name)
 
     if @meal.save
       redirect_to @meal
@@ -25,12 +25,12 @@ class MealsController < ApplicationController
 
   def edit
     @meal = Meal.find(params[:id])
-    @foods = Food.all
+    @foods = Food.order(:name)
   end
 
   def update
     @meal = Meal.find(params[:id])
-    @foods = Food.all
+    @foods = Food.order(:name)
 
     if @meal.update(meal_params)
       redirect_to @meal
