@@ -1,7 +1,7 @@
 class Meal < ApplicationRecord
   belongs_to :food
 
-  validates :servings, presence: true
+  validates :servings, comparison: { greater_than_or_equal_to: 0 }
   validates :consumed_on, presence: true
   validates :food_id, presence: true
 
