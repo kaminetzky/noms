@@ -1,8 +1,9 @@
 <%= form_with model: meal do |form| %>
   <div>
     <%= form.label :food_id %><br>
-    <%= form.select :food_id, foods.map {|f| ["#{f.name} (#{f.serving})", f.id]},
-      include_blank: true %>
+    <%= form.collection_select :food_id, foods, :id,
+      -> (f) {"#{f.name} (#{f.serving})"}, include_blank: true %>
+
     <% meal.errors.full_messages_for(:food_id).each do |message| %>
       <div><%= message %></div>
     <% end %>
