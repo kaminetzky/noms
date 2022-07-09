@@ -3,7 +3,7 @@
 <ul>
   <% @foods.each do |food| %>
     <li>
-      <%= link_to food.name, food %>
+      <%= link_to food.is_favorite ? food.name + " ⭐️" : food.name, food %>
     </li>
   <% end %>
 </ul>
