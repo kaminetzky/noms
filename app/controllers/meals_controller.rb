@@ -8,7 +8,7 @@ class MealsController < ApplicationController
   end
 
   def new
-    @meal = Meal.new(servings: 1, consumed_on: Time.now)
+    @meal = Meal.new(servings: 1, consumed_on: Time.now, food_id: params[:food_id])
     @foods = Food.order(:name)
   end
 
@@ -17,7 +17,7 @@ class MealsController < ApplicationController
     @foods = Food.order(:name)
 
     if @meal.save
-      redirect_to @meal
+      redirect_to root_path
     else
       render :new, status: :unprocessable_entity
     end

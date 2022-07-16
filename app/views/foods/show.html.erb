@@ -17,5 +17,6 @@
                     turbo_confirm: "Are you sure?"
                   } %></li>
   <li><%= link_to "All foods", foods_path %></li>
+  <li><%= link_to "New meal", new_meal_path(food_id: @food.id) %></li>
   <li><%= link_to "Dashboard", root_path %></li>
 </ul>
