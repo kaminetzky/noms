@@ -11,6 +11,12 @@ class Meal < ApplicationRecord
           (Time.zone.now - 6.hours).beginning_of_day + 6.hours)
   end
 
+  def self.not_today
+    # Day starts at 6 AM
+    where.not("consumed_on >= ?",
+              (Time.zone.now - 6.hours).beginning_of_day + 6.hours)
+  end
+
   def calories
     servings * food.calories
   end
