@@ -1,8 +1,10 @@
 class DashboardsController < ApplicationController
   def show
-    @meals = Meal.all
-    @foods = Food.all
+
+    @meal_count = Meal.count
+    @food_count = Food.count
 
     @meals_today = Meal.today
+    @meal_last = Meal.last
   end
 end
