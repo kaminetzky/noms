@@ -1,8 +1,8 @@
 <h1>Dashboard</h1>
 <p><strong>Food count:</strong> <%= @food_count %></p>
 <p><strong>Meal count:</strong> <%= @meal_count %></p>
-<p><strong>Calories consumed today:</strong> <%= @meals_today.sum(&:calories) %></p>
-<p><strong>Protein consumed today:</strong> <%= @meals_today.sum(&:protein) %></p>
+<p><strong>Calories consumed today:</strong> <%= @meals_today.sum(&:calories).round %></p>
+<p><strong>Protein consumed today:</strong> <%= @meals_today.sum(&:protein).round %></p>
 
 <h3>Meals</h3>
 <ul>
