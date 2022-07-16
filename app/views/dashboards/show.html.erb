@@ -6,10 +6,15 @@
 <p><strong>Calories consumed today:</strong> <%= @meals_today.sum(&:calories) %></p>
 <p><strong>Protein consumed today:</strong> <%= @meals_today.sum(&:protein) %></p>
 
+<h3>Meals</h3>
 <ul>
-  <li><%= link_to "All foods", foods_path %></li>
+  <li><%= link_to "New meal", new_meal_path %></li>
   <li><%= link_to "All meals", meals_path %></li>
   <li><%= link_to "Last meal", @meals.last %></li>
+</ul>
+
+<h3>Foods</h3>
+<ul>
   <li><%= link_to "New food", new_food_path %></li>
-  <li><%= link_to "New meal", new_meal_path %></li>
+  <li><%= link_to "All foods", foods_path %></li>
 </ul>
