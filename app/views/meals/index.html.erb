@@ -1,24 +1,26 @@
-<h1>Meals</h1>
-
-<h2>Today</h2>
-<ul>
-  <% @meals.today.each do |meal| %>
-    <li>
-      <%= link_to "#{meal.food.name} (#{time_ago_in_words meal.consumed_on} ago)", meal %>
-    </li>
-  <% end %>
-</ul>
-
-<h2>Previous meals</h2>
-<ul>
-  <% @meals.not_today.each do |meal| %>
-    <li>
-      <%= link_to "#{meal.food.name} (#{time_ago_in_words meal.consumed_on} ago)", meal %>
-    </li>
-  <% end %>
-</ul>
-
-<ul>
-  <li><%= link_to "New meal", new_meal_path %></li>
-  <li><%= link_to "Dashboard", root_path %></li>
-</ul>
+<div class="container">
+  <h1>Meals</h1>
+  
+  <h2>Today</h2>
+  <ul>
+    <% @meals.today.each do |meal| %>
+      <li>
+        <%= link_to "#{meal.food.name} (#{time_ago_in_words meal.consumed_on} ago)", meal %>
+      </li>
+    <% end %>
+  </ul>
+  
+  <h2>Previous meals</h2>
+  <ul>
+    <% @meals.not_today.each do |meal| %>
+      <li>
+        <%= link_to "#{meal.food.name} (#{time_ago_in_words meal.consumed_on} ago)", meal %>
+      </li>
+    <% end %>
+  </ul>
+  
+  <ul>
+    <li><%= link_to "New meal", new_meal_path %></li>
+    <li><%= link_to "Dashboard", root_path %></li>
+  </ul>
+</div>

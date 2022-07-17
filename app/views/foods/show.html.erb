@@ -1,22 +1,24 @@
-<h1><%= @food.name %></h1>
-
-<% if @food.is_favorite%>
-  <p><strong>⭐️ Favorite </strong></p>
-<% end %>
-<% unless @food.description.blank?%>
-  <p><strong>Description:</strong> <%= @food.description %></p>
-<% end %>
-<p><strong>Serving:</strong> <%= @food.serving %></p>
-<p><strong>Calories:</strong> <%= @food.calories %></p>
-<p><strong>Protein:</strong> <%= @food.protein %></p>
-
-<ul>
-  <li><%= link_to "Edit", edit_food_path(@food) %></li>
-  <li><%= link_to "Destroy", food_path(@food), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  } %></li>
-  <li><%= link_to "All foods", foods_path %></li>
-  <li><%= link_to "New meal", new_meal_path(food_id: @food.id) %></li>
-  <li><%= link_to "Dashboard", root_path %></li>
-</ul>
+<div class="container">
+  <h1><%= @food.name %></h1>
+  
+  <% if @food.is_favorite%>
+    <p><strong>⭐️ Favorite </strong></p>
+  <% end %>
+  <% unless @food.description.blank?%>
+    <p><strong>Description:</strong> <%= @food.description %></p>
+  <% end %>
+  <p><strong>Serving:</strong> <%= @food.serving %></p>
+  <p><strong>Calories:</strong> <%= @food.calories %></p>
+  <p><strong>Protein:</strong> <%= @food.protein %></p>
+  
+  <ul>
+    <li><%= link_to "Edit", edit_food_path(@food) %></li>
+    <li><%= link_to "Destroy", food_path(@food), data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure?"
+                    } %></li>
+    <li><%= link_to "All foods", foods_path %></li>
+    <li><%= link_to "New meal", new_meal_path(food_id: @food.id) %></li>
+    <li><%= link_to "Dashboard", root_path %></li>
+  </ul>
+</div>

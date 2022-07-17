@@ -1,8 +1,10 @@
-<h1>Edit food</h1>
-
-<%= render "form", food: @food %>
-
-<ul>
-  <li><%= link_to "All foods", foods_path %></li>
-  <li><%= link_to "Dashboard", root_path %></li>
-</ul>
+<div class="container">
+  <h1>Edit food</h1>
+  
+  <%= render "form", food: @food %>
+  
+  <ul>
+    <li><%= link_to "All foods", foods_path %></li>
+    <li><%= link_to "Dashboard", root_path %></li>
+  </ul>
+</div>

@@ -1,19 +1,21 @@
-<h1><%= @meal.food.name %></h1>
-
-<% unless @meal.description.blank?%>
-<p><strong>Description:</strong> <%= @meal.description %></p>
-<% end %>
-<p><strong>Servings:</strong> <%= @meal.servings %></p>
-<p><strong>Datetime:</strong> <%= @meal.consumed_on %></p>
-<p><strong>Total calories:</strong> <%= @meal.calories %></p>
-<p><strong>Total protein:</strong> <%= @meal.protein %></p>
-
-<ul>
-  <li><%= link_to "Edit", edit_meal_path(@meal) %></li>
-  <li><%= link_to "Destroy", meal_path(@meal), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  } %></li>
-  <li><%= link_to "New meal", new_meal_path %></li>
-  <li><%= link_to "Dashboard", root_path %></li>
-</ul>
+<div class="container">
+  <h1><%= @meal.food.name %></h1>
+  
+  <% unless @meal.description.blank?%>
+  <p><strong>Description:</strong> <%= @meal.description %></p>
+  <% end %>
+  <p><strong>Servings:</strong> <%= @meal.servings %></p>
+  <p><strong>Datetime:</strong> <%= @meal.consumed_on %></p>
+  <p><strong>Total calories:</strong> <%= @meal.calories %></p>
+  <p><strong>Total protein:</strong> <%= @meal.protein %></p>
+  
+  <ul>
+    <li><%= link_to "Edit", edit_meal_path(@meal) %></li>
+    <li><%= link_to "Destroy", meal_path(@meal), data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure?"
+                    } %></li>
+    <li><%= link_to "New meal", new_meal_path %></li>
+    <li><%= link_to "Dashboard", root_path %></li>
+  </ul>
+</div>
