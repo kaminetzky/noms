@@ -3,7 +3,8 @@ class DashboardsController < ApplicationController
     @meal_count = Meal.count
     @food_count = Food.count
 
-    @meals_today = Meal.today
+    @calories_today = Meal.today.sum(&:calories).round
+    @protein_today = Meal.today.sum(&:protein).round
     @meal_last = Meal.last
     @food_last = Food.last
   end

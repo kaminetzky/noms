@@ -25,11 +25,11 @@
     <div class="stat-block-multiple">
       <div class="stat-block">
         <h3>Calories</h3>
-        <p><%= @meals_today.sum(&:calories).round %></p>
+        <p><%= @calories_today %></p>
       </div>
       <div class="stat-block">
         <h3>Protein</h3>
-        <p><%= @meals_today.sum(&:protein).round %></p>
+        <p><%= @protein_today %></p>
       </div>
     </div>
   </div>
