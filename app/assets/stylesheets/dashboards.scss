@@ -1,4 +1,4 @@
-@import "colors.scss";
+@import "constants.scss";
 
 body.dashboards {
   display: flex;
@@ -77,6 +77,7 @@ body.dashboards {
   background-color: $color-grey-0;
   border-radius: 1rem;
   padding: 1.5rem;
+  box-shadow: $shadow-2;
 
   display: flex;
   flex-direction: column;
@@ -132,6 +133,8 @@ body.dashboards {
   text-align: center;
   background-color: $color-grey-0;
 
+  box-shadow: $shadow-2;
+
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -154,7 +157,7 @@ body.dashboards {
   }
 
   .link-buttons a {
-  background-color: $color-blue-6;;
+  background-color: $color-blue-3;
   color: $color-blue-0;
   font-size: 1rem;
   padding: 0.5rem 0;
