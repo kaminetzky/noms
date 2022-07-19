@@ -155,10 +155,11 @@ body.dashboards {
   .link-buttons a {
     background-color: $color-blue-6;
     color: $color-blue-0;
-    font-size: 1rem;
+    font-size: 0.75rem;
     font-weight: 700;
     padding: 0.5rem 0;
     text-decoration: none;
+    text-transform: uppercase;
     border-radius: 0.5rem;
     flex: 1 1 0;
     box-shadow: $shadow-0;
