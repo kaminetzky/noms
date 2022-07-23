@@ -93,6 +93,7 @@ body.dashboards {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap: 6rem;
   }
 
   .block-title-link {
@@ -162,7 +163,6 @@ body.dashboards {
     color: $color-grey-3;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    max-width: 60%;
     text-align: right;
   }
 
