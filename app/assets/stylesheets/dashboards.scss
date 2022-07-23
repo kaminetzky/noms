@@ -31,7 +31,6 @@ body.dashboards {
     padding: 0;
     border: 0;
     font-size: 100%;
-    font: inherit;
     vertical-align: baseline;
   }
   /* HTML5 display-role reset for older browsers */
@@ -90,19 +89,71 @@ body.dashboards {
     gap: 1.5rem;
   }
 
-  .stat-block-with-title .block-title {
-    font-size: 1rem;
-    font-weight: 700;
-    color: $color-blue-6;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    flex-shrink: 0;
-  }
-
   .stat-block-with-title .header-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  .block-title-link {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    // align-items: center;
+    text-decoration: none;
+
+
+    .block-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: $color-blue-6;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      flex-shrink: 0;
+      transition: all ease 0.2s;
+    }
+
+    .icons {
+      color: $color-blue-6;
+      position: relative;
+      
+      i {
+        position: absolute;
+        transition: all ease 0.2s;
+      }
+
+      .icon-default {
+        opacity: 1;
+      }
+      
+      .icon-hover {
+        opacity: 0;
+        left: -6px;
+      }
+    }
+
+    &:hover {
+      color: $color-grey-3;
+      .block-title {
+        color: inherit;
+      }
+
+      .icons {
+        color: inherit;
+
+        i {
+          transform: translate(6px, 0px);
+        }
+
+        .icon-default {
+          opacity: 0;
+        }
+        
+        .icon-hover {
+          opacity: 1;
+        }
+      }
+    }
   }
 
   .stat-block-with-title .food-name {
@@ -181,11 +232,12 @@ body.dashboards {
     border-radius: 0.5rem;
     flex: 1 1 0;
     box-shadow: $shadow-0;
-    transition-duration: 0.1s;
+    transition-duration: 0.2s;
   }
 
   .link-buttons a:hover {
     box-shadow: none;
-    transform: translate(0px, 1px)
+    transform: translate(0px, 1px);
+    background-color: $color-blue-5;
   }
 }

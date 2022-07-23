@@ -21,7 +21,13 @@
 
   <div class="block stat-block-with-title">
     <div class="header-container">
-      <h2 class="block-title">Last meal</h2>
+      <%= link_to @meal_last, class: "block-title-link" do %>
+        <h2 class="block-title">Last meal</h2>
+        <div class="icons">
+          <%= icon('fa-regular', 'angle-right', class: "icon-default") %>
+          <%= icon('fa-regular', 'arrow-right', class: "icon-hover") %>
+        </div>
+      <% end %>
       <h2 class="food-name"><%= @meal_last.food.name %></h2>
     </div>
 
