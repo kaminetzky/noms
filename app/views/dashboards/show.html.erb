@@ -41,26 +41,16 @@
     <div class="block link-block">
       <h3>Meals</h3>
       <div class="link-buttons">
-        <div class="link-buttons-row">
-          <%= link_to "New", new_meal_path %>
-        </div>
-        <div class="link-buttons-row">
-          <%= link_to "All", meals_path %>
-          <%= link_to "Last", @meal_last %>
-        </div>
+        <%= link_to "New", new_meal_path %>
+        <%= link_to "All", meals_path %>
       </div>
     </div>
     
     <div class="block link-block">
       <h3>Foods</h3>
       <div class="link-buttons">
-        <div class="link-buttons-row">
-          <%= link_to "New", new_food_path %>
-        </div>
-        <div class="link-buttons-row">
-          <%= link_to "All", foods_path %>
-          <%= link_to "Last", @food_last %>
-        </div>
+        <%= link_to "New", new_food_path %>
+        <%= link_to "All", foods_path %>
       </div>
     </div>
   </div>

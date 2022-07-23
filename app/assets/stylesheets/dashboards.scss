@@ -169,19 +169,13 @@ body.dashboards {
     gap: 0.75rem;
   }
 
-  .link-buttons-row {
-    display: flex;
-    justify-content: space-evenly;
-    gap: 0.75rem;
-  }
-
   .link-buttons a {
     background-color: $color-blue-6;
     color: $color-blue-0;
     font-size: 0.75rem;
     letter-spacing: 0.1em;
     font-weight: 700;
-    padding: 0.75rem 0.5rem;
+    padding: 0.75rem 0.75rem;
     text-decoration: none;
     text-transform: uppercase;
     border-radius: 0.5rem;
