@@ -5,22 +5,25 @@
   </div>
 
   <div class="block stat-block-with-title">
-    <h2>Total</h2>
+    <div class="header-container">
+      <h2 class="block-title">Last meal</h2>
+      <h2 class="food-name"><%= @meal_last.food.name %></h2>
+    </div>
 
     <div class="stat-block-multiple">
       <div class="stat-block">
-        <h3>Meals</h3>
-        <p><%= @meal_count %></p>
+        <h3>Calories</h3>
+        <p><%= @meal_last.calories.round %></p>
       </div>
       <div class="stat-block">
-        <h3>Foods</h3>
-        <p><%= @food_count %></p>
+        <h3>Protein</h3>
+        <p><%= @meal_last.protein.round %></p>
       </div>
     </div>
   </div>
 
   <div class="block stat-block-with-title">
-    <h2>Today</h2>
+    <h2 class="block-title">Today</h2>
 
     <div class="stat-block-multiple">
       <div class="stat-block">

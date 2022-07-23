@@ -90,12 +90,29 @@ body.dashboards {
     gap: 1.5rem;
   }
 
-  .stat-block-with-title h2 {
+  .stat-block-with-title .block-title {
     font-size: 1rem;
     font-weight: 700;
     color: $color-blue-6;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    flex-shrink: 0;
+  }
+
+  .stat-block-with-title .header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .stat-block-with-title .food-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: $color-grey-3;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    max-width: 60%;
+    text-align: right;
   }
 
   .stat-block-multiple {
