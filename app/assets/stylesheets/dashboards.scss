@@ -96,23 +96,21 @@ body.dashboards {
     gap: 6rem;
   }
 
+  .block-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: $color-blue-6;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    flex-shrink: 0;
+    transition: all ease 0.2s;
+  }
+
   .block-title-link {
     display: flex;
     flex-direction: row;
     gap: 0.5rem;
-    // align-items: center;
     text-decoration: none;
-
-
-    .block-title {
-      font-size: 1rem;
-      font-weight: 700;
-      color: $color-blue-6;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      flex-shrink: 0;
-      transition: all ease 0.2s;
-    }
 
     .icons {
       color: $color-blue-6;
