@@ -47,16 +47,28 @@
     <div class="block link-block">
       <h3>Meals</h3>
       <div class="link-buttons">
-        <%= link_to "New", new_meal_path %>
-        <%= link_to "All", meals_path %>
+        <%= link_to new_meal_path do %>
+          <%= icon('fa-regular', 'plus', class: "icon-default") %>
+          <p>New</p>
+        <% end %>
+        <%= link_to meals_path do %>
+          <%= icon('fa-regular', 'list', class: "icon-default") %>
+          <p>All</p>
+        <% end %>
       </div>
     </div>
     
     <div class="block link-block">
       <h3>Foods</h3>
       <div class="link-buttons">
-        <%= link_to "New", new_food_path %>
-        <%= link_to "All", foods_path %>
+        <%= link_to new_food_path do %>
+          <%= icon('fa-regular', 'plus', class: "icon-default") %>
+          <p>New</p>
+        <% end %>
+        <%= link_to foods_path do %>
+          <%= icon('fa-regular', 'list', class: "icon-default") %>
+          <p>All</p>
+        <% end %>
       </div>
     </div>
   </div>

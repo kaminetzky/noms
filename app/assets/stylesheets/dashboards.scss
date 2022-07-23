@@ -219,19 +219,26 @@ body.dashboards {
   }
 
   .link-buttons a {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
     background-color: $color-blue-6;
     color: $color-blue-0;
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    font-weight: 700;
     padding: 0.75rem 0.75rem;
-    text-decoration: none;
-    text-transform: uppercase;
     border-radius: 0.5rem;
     flex: 1 1 0;
     box-shadow: $shadow-0;
     transition-duration: 0.2s;
+
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    flex: 0 0 0;
   }
+
 
   .link-buttons a:hover {
     box-shadow: none;
