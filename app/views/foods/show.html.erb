@@ -4,8 +4,8 @@
   <% if @food.is_favorite%>
     <p><strong>⭐️ Favorite </strong></p>
   <% end %>
-  <% unless @food.description.blank?%>
-    <p><strong>Description:</strong> <%= @food.description %></p>
+  <% unless @food.notes.blank?%>
+    <p><strong>Notes:</strong> <%= @food.notes %></p>
   <% end %>
   <p><strong>Serving:</strong> <%= @food.serving %></p>
   <p><strong>Calories:</strong> <%= @food.calories %></p>

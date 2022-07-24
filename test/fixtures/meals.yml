@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  description: MyText
+  notes: MyText
   servings: 1.5
   consumed_on: 2022-06-10 23:03:31
   food: one
 
 two:
-  description: MyText
+  notes: MyText
   servings: 1.5
   consumed_on: 2022-06-10 23:03:31
   food: two

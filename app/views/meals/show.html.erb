@@ -1,8 +1,8 @@
 <div class="container">
   <h1><%= @meal.food.name %></h1>
   
-  <% unless @meal.description.blank?%>
-  <p><strong>Description:</strong> <%= @meal.description %></p>
+  <% unless @meal.notes.blank?%>
+  <p><strong>Notes:</strong> <%= @meal.notes %></p>
   <% end %>
   <p><strong>Servings:</strong> <%= @meal.servings %></p>
   <p><strong>Datetime:</strong> <%= @meal.consumed_on %></p>
