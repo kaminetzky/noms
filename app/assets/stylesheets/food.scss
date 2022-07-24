@@ -96,6 +96,14 @@ body.foods {
       padding: 0.75rem 1.5rem;
       border: none;
       font-weight: 700;
+      transition: all ease 0.2s;
+      box-shadow: $shadow-0;
+
+      &:hover {
+        box-shadow: none;
+        transform: translate(0px, 1px);
+        background-color: $color-blue-5;
+      }
     }
   }
 }
