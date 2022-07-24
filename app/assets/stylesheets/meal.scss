@@ -1,21 +1,111 @@
+@import "constants.scss";
+
 body.meals {
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  max-width: 100%;
+  background-color: $color-grey-1;
+  color: $color-blue-6;
 
-  font-family: Montserrat, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue;
-  padding: 1em;
-
-  line-height: 1;
+  padding: 2rem;
 
   .container {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 2rem;
 
     width: 100%;
-    max-width: 30em;
+    max-width: 32rem;
+  }
+  .header-link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+
+    h1 {
+      font-size: 4.5rem;
+      color: $color-blue-6;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: all ease 0.2s;
+    }
+
+    &:hover {
+      h1 {
+        color: $color-blue-5;
+      }
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    background-color: $color-grey-0;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: $shadow-2;
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .row {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .input-pair {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+
+      flex: auto;
+      min-width: 0;
+    }
+
+    input, textarea, select {
+      padding: 0.75rem;
+
+      background-color: $color-grey-0;
+      border: 1px solid $color-grey-1;
+      border-radius: 0.5rem;
+
+      font-size: 1rem;
+      color: $color-blue-6;
+    }
+
+    select {
+      -webkit-appearance: none;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+
+    input[type="submit"] {
+      -webkit-appearance: none;
+      align-self: flex-end;
+      background-color: $color-blue-6;
+      color: $color-blue-0;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      font-weight: 700;
+      transition: all ease 0.2s;
+      box-shadow: $shadow-0;
+
+      &:hover {
+        box-shadow: none;
+        transform: translate(0px, 1px);
+        background-color: $color-blue-5;
+      }
+    }
   }
 }

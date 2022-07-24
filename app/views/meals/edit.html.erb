@@ -1,10 +1,7 @@
 <div class="container">
-  <h1>Edit meal</h1>
+  <%= link_to root_path, class: "header-link" do %>
+    <h1>Noms</h1>
+  <% end %>
   
-  <%= render "form", meal: @meal, foods: @foods %>
-  
-  <ul>
-    <li><%= link_to "All meals", meals_path %></li>
-    <li><%= link_to "Dashboard", root_path %></li>
-  </ul>
+  <%= render "form", meal: @meal, foods: @foods, title: "Edit meal" %>
 </div>
