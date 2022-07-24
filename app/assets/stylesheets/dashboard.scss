@@ -19,15 +19,13 @@ body.dashboards {
     max-width: 32rem;
   }
 
-  .header {
-    text-align: center;
-  }
-
-  .header h1 {
+  h1 {
     font-size: 4.5rem;
     color: $color-blue-6;
     font-weight: 700;
     letter-spacing: 0.1em;
+    text-align: center;
+    text-transform: uppercase;
   }
 
   .block {

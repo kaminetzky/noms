@@ -10,13 +10,59 @@ body.foods {
 
   padding: 2rem;
 
-
+  
   .container {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 2rem;
 
     width: 100%;
-    max-width: 30em;
+    max-width: 32rem;
+  }
+
+  .header-link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+
+    h1 {
+      font-size: 4.5rem;
+      color: $color-blue-6;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: all ease 0.2s;
+    }
+
+    &:hover {
+      h1 {
+        color: $color-blue-5;
+      }
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    background-color: $color-grey-0;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: $shadow-2;
+
+    .row {
+      display: flex;
+    }
+
+    .input-pair {
+      display: flex;
+      flex-direction: column;
+
+      flex: auto;
+      min-width: 0;
+    }
   }
 }
