@@ -22,8 +22,8 @@
       <%= link_to @meal_last, class: "block-title-link" do %>
         <h2 class="block-title">Last meal</h2>
         <div class="icons">
-          <%= icon('fa-regular', 'angle-right', class: "icon-default") %>
-          <%= icon('fa-regular', 'arrow-right', class: "icon-hover") %>
+          <%= icon('fa-solid', 'angle-right', class: "icon-default") %>
+          <%= icon('fa-solid', 'arrow-right', class: "icon-hover") %>
         </div>
       <% end %>
       <h2 class="food-name"><%= @meal_last.food.name %></h2>
@@ -46,11 +46,11 @@
       <h3>Meals</h3>
       <div class="link-buttons">
         <%= link_to new_meal_path do %>
-          <%= icon('fa-regular', 'plus', class: "icon-default") %>
+          <%= icon('fa-solid', 'plus', class: "icon-default") %>
           <p>New</p>
         <% end %>
         <%= link_to meals_path do %>
-          <%= icon('fa-regular', 'list', class: "icon-default") %>
+          <%= icon('fa-solid', 'list', class: "icon-default") %>
           <p>All</p>
         <% end %>
       </div>
@@ -60,11 +60,11 @@
       <h3>Foods</h3>
       <div class="link-buttons">
         <%= link_to new_food_path do %>
-          <%= icon('fa-regular', 'plus', class: "icon-default") %>
+          <%= icon('fa-solid', 'plus', class: "icon-default") %>
           <p>New</p>
         <% end %>
         <%= link_to foods_path do %>
-          <%= icon('fa-regular', 'list', class: "icon-default") %>
+          <%= icon('fa-solid', 'list', class: "icon-default") %>
           <p>All</p>
         <% end %>
       </div>
