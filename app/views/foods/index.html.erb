@@ -1,16 +1,22 @@
 <div class="container">
-  <h1>Foods</h1>
+  <%= link_to root_path, class: "header-link" do %>
+    <h1>Noms</h1>
+  <% end %>
   
-  <ul>
-    <% @foods.each do |food| %>
-      <li>
-        <%= link_to food.is_favorite ? food.name + " ⭐️" : food.name, food %>
-      </li>
-    <% end %>
-  </ul>
-  
-  <ul>
-    <li><%= link_to "New food", new_food_path %></li>
-    <li><%= link_to "Dashboard", root_path %></li>
-  </ul>
+  <div class="block">
+    <h2>Foods</h2>
+
+    <ul>
+      <% @foods.each do |food| %>
+        <li>
+          <div class="icons">
+            <%= icon('fa-solid', 'angle-right', class: "icon-default") %>
+            <%= icon('fa-solid', 'arrow-right', class: "icon-hover") %>
+          </div>
+          <%= link_to food.name, food %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
 </div>

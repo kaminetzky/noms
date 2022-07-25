@@ -105,4 +105,84 @@ body.foods {
       }
     }
   }
+
+  .block {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    background-color: $color-grey-0;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: $shadow-2;
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    li {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+
+      a {
+        text-decoration: none;
+        color: $color-blue-6;
+        font-size: 1rem;
+        transition: all ease 0.2s;
+      }
+
+      .icons {
+        position: relative;
+        
+        i {
+          transition: all ease 0.2s;
+
+        }
+  
+        .icon-default {
+          opacity: 1;
+          color: $color-grey-3;
+        }
+        
+        .icon-hover {
+          opacity: 0;
+          left: -6px;
+          position:absolute;
+        }
+      }
+  
+      &:hover {
+
+        a {
+          transform: translate(6px, 0px);
+          font-weight: 700;
+        }
+  
+        .icons {
+          color: inherit;
+  
+          i {
+            transform: translate(6px, 0px);
+          }
+  
+          .icon-default {
+            opacity: 0;
+          }
+          
+          .icon-hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
 }
