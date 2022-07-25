@@ -1,26 +1,39 @@
 <div class="container">
-  <h1>Meals</h1>
+  <%= link_to root_path, class: "header-link" do %>
+    <h1>Noms</h1>
+  <% end %>
   
-  <h2>Today</h2>
-  <ul>
-    <% @meals.today.includes(:food).each do |meal| %>
-      <li>
-        <%= link_to "#{meal.food.name} (#{time_ago_in_words meal.consumed_on} ago)", meal %>
-      </li>
-    <% end %>
-  </ul>
-  
-  <h2>Previous meals</h2>
-  <ul>
-    <% @meals.not_today.includes(:food).each do |meal| %>
-      <li>
-        <%= link_to "#{meal.food.name} (#{time_ago_in_words meal.consumed_on} ago)", meal %>
-      </li>
-    <% end %>
-  </ul>
-  
-  <ul>
-    <li><%= link_to "New meal", new_meal_path %></li>
-    <li><%= link_to "Dashboard", root_path %></li>
-  </ul>
+  <div class="block">
+    <h2>Foods</h2>
+    <div class="day-group">
+      <h3>Today</h3>
+      <ul>
+        <% @meals.today.includes(:food).each do |meal| %>
+          <li>
+            <div class="icons">
+              <%= icon('fa-solid', 'angle-right', class: "icon-default") %>
+              <%= icon('fa-solid', 'arrow-right', class: "icon-hover") %>
+            </div>
+            <%= link_to "#{meal.food.name} (#{time_ago_in_words meal.consumed_on} ago)", meal %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    
+    <div class="day-group">
+      <h3>Previous meals</h3>
+      <ul>
+        <% @meals.not_today.includes(:food).each do |meal| %>
+          <li>
+            <div class="icons">
+              <%= icon('fa-solid', 'angle-right', class: "icon-default") %>
+              <%= icon('fa-solid', 'arrow-right', class: "icon-hover") %>
+            </div>
+            <%= link_to "#{meal.food.name} (#{time_ago_in_words meal.consumed_on} ago)", meal %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
 </div>
