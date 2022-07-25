@@ -29,7 +29,7 @@
               <%= icon('fa-solid', 'angle-right', class: "icon-default") %>
               <%= icon('fa-solid', 'arrow-right', class: "icon-hover") %>
             </div>
-            <%= link_to "#{meal.food.name} (#{time_ago_in_words meal.consumed_on} ago)", meal %>
+            <%= link_to "#{meal.food.name}", meal %>
           </li>
         <% end %>
       </ul>
