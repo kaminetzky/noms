@@ -14,15 +14,19 @@
   
   <div class="input-pair">
     <%= form.label :food_id %>
-    <%= form.grouped_collection_select :food_id,
-      group_by_favorite(foods),
-      -> (el) {el[:foods]},
-      -> (el) {el[:is_favorite] ? 'Favorites' : 'Other'},
-      :id,
-      -> (f) {"#{f.name} (#{f.serving})"},
-      include_blank: true  %>
+    <div class="select-wrapper">
+      <%= form.grouped_collection_select :food_id,
+        group_by_favorite(foods),
+        -> (el) {el[:foods]},
+        -> (el) {el[:is_favorite] ? 'Favorites' : 'Other'},
+        :id,
+        -> (f) {"#{f.name} (#{f.serving})"},
+        include_blank: true  %>
+      <%= icon('fa-solid', 'caret-down') %>
+    </div>
   </div>
-  
+
+
   <div class="input-pair">
     <%= form.label :servings %>
     <%= form.number_field :servings, step: 0.1  %>
