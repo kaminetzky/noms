@@ -1,21 +1,37 @@
 <div class="container">
-  <h1><%= @meal.food.name %></h1>
-  
-  <% unless @meal.notes.blank?%>
-  <p><strong>Notes:</strong> <%= @meal.notes %></p>
+  <%= link_to root_path, class: "header-link" do %>
+    <h1>Noms</h1>
   <% end %>
-  <p><strong>Servings:</strong> <%= @meal.servings %></p>
-  <p><strong>Datetime:</strong> <%= @meal.consumed_on %></p>
-  <p><strong>Total calories:</strong> <%= @meal.calories %></p>
-  <p><strong>Total protein:</strong> <%= @meal.protein %></p>
-  
-  <ul>
-    <li><%= link_to "Edit", edit_meal_path(@meal) %></li>
-    <li><%= link_to "Destroy", meal_path(@meal), data: {
-                      turbo_method: :delete,
-                      turbo_confirm: "Are you sure?"
-                    } %></li>
-    <li><%= link_to "New meal", new_meal_path %></li>
-    <li><%= link_to "Dashboard", root_path %></li>
-  </ul>
+
+  <div class="block">
+    <h2><%= @meal.food.name %></h2>
+    <p><strong>Servings:</strong> <%= @meal.servings %></p>
+    <p><strong>Datetime:</strong> <%= @meal.consumed_on.to_formatted_s(:long) %></p>
+    <p><strong>Total calories:</strong> <%= @meal.calories %></p>
+    <p><strong>Total protein:</strong> <%= @meal.protein %></p>
+    
+    <% unless @meal.notes.blank?%>
+    <p><strong>Notes:</strong> <%= @meal.notes %></p>
+    <% end %>
+    
+    <ul>
+      <li>
+        <div class="icons">
+          <%= icon('fa-solid', 'angle-right', class: "icon-default") %>
+          <%= icon('fa-solid', 'arrow-right', class: "icon-hover") %>
+        </div>
+        <%= link_to "Edit", edit_meal_path(@meal) %>
+      </li>
+      <li>
+        <div class="icons">
+          <%= icon('fa-solid', 'angle-right', class: "icon-default") %>
+          <%= icon('fa-solid', 'arrow-right', class: "icon-hover") %>
+        </div>
+        <%= link_to "Delete", meal_path(@meal), data: {
+                        turbo_method: :delete,
+                        turbo_confirm: "Are you sure?"
+                      } %>
+      </li>
+    </ul>
+  </div>
 </div>
