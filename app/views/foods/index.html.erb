@@ -14,6 +14,9 @@
             <%= icon('fa-solid', 'arrow-right', class: "icon-hover") %>
           </div>
           <%= link_to food.name, food %>
+          <% if food.is_favorite %>
+            <%= icon('fa-solid', 'star') %>
+          <% end %>
         </li>
       <% end %>
     </ul>
