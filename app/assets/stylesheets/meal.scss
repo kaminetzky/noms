@@ -163,12 +163,12 @@ body.meals {
       display: flex;
       align-items: baseline;
       gap: 0.5rem;
+      transition: all ease 0.2s;
 
       a {
         text-decoration: none;
         color: $color-blue-6;
         font-size: 1rem;
-        transition: all ease 0.2s;
       }
 
       .icons {
@@ -176,7 +176,6 @@ body.meals {
         
         i {
           transition: all ease 0.2s;
-
         }
   
         .icon-default {
@@ -192,18 +191,10 @@ body.meals {
       }
   
       &:hover {
-
-        a {
-          transform: translate(6px, 0px);
-          font-weight: 700;
-        }
+        transform: translate(6px, 0px);
   
         .icons {
           color: inherit;
-  
-          i {
-            transform: translate(6px, 0px);
-          }
   
           .icon-default {
             opacity: 0;
