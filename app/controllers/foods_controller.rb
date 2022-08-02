@@ -1,4 +1,6 @@
 class FoodsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+
   def index
     @foods = Food.order(:name)
   end
@@ -12,7 +14,7 @@ class FoodsController < ApplicationController
   end
 
   def create
-    @food = Food.new(food_params)
+    @food = current_user.foods.build(food_params)
 
     if @food.save
       redirect_to @food

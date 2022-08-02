@@ -1,4 +1,6 @@
 class MealsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+
   def index
     @meals = Meal.order(consumed_on: :desc)
   end
@@ -13,12 +15,12 @@ class MealsController < ApplicationController
   end
 
   def create
-    @meal = Meal.new(meal_params)
-    @foods = Food.order(:name)
+    @meal = current_user.meals.build(meal_params)
 
     if @meal.save
       redirect_to root_path
     else
+      @foods = Food.order(:name)
       render :new, status: :unprocessable_entity
     end
   end
