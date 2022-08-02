@@ -2,7 +2,7 @@ class MealsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @meals = Meal.order(consumed_on: :desc)
+    @meals = Meal.where(user: current_user).order(consumed_on: :desc)
   end
 
   def show
@@ -11,7 +11,7 @@ class MealsController < ApplicationController
 
   def new
     @meal = Meal.new(servings: 1, consumed_on: Time.now, food_id: params[:food_id])
-    @foods = Food.order(:name)
+    @foods = Food.where(user: current_user).order(:name)
   end
 
   def create
@@ -20,23 +20,23 @@ class MealsController < ApplicationController
     if @meal.save
       redirect_to root_path
     else
-      @foods = Food.order(:name)
+      @foods = Food.where(user: current_user).order(:name)
       render :new, status: :unprocessable_entity
     end
   end
 
   def edit
     @meal = Meal.find(params[:id])
-    @foods = Food.order(:name)
+    @foods = Food.where(user: current_user).order(:name)
   end
 
   def update
     @meal = Meal.find(params[:id])
-    @foods = Food.order(:name)
 
     if @meal.update(meal_params)
       redirect_to @meal
     else
+      @foods = Food.where(user: current_user).order(:name)
       render :edit, status: :unprocessable_entity
     end
   end
