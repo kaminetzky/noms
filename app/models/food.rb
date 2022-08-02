@@ -1,5 +1,6 @@
 class Food < ApplicationRecord
-  has_many :meals
+  has_many :meals, dependent: :destroy
+  belongs_to :user
 
   validates :name, presence: true
   validates :serving_size, comparison: { greater_than_or_equal_to: 0 }
