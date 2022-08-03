@@ -209,11 +209,15 @@ body.dashboards {
   }
 
   a.sign-in-out {
+    color: $color-blue-6;
+    
     text-align: center;
     text-decoration: none;
-    color: $color-blue-6;
     font-weight: 700;
+
     transition: all ease 0.2s;
+
+    align-self: center;
 
     &:hover {
     color: $color-blue-5;
