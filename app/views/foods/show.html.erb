@@ -19,24 +19,26 @@
       <p><strong>Notes:</strong> <%= @food.notes %></p>
     <% end %>
     
-    <ul>    
-      <li>
-        <div class="icons">
-          <%= icon('fa-solid', 'angle-right', class: "icon-default") %>
-          <%= icon('fa-solid', 'arrow-right', class: "icon-hover") %>
-        </div>
-        <%= link_to "Edit", edit_food_path(@food) %>
-      </li>
-      <li>
-        <div class="icons">
-          <%= icon('fa-solid', 'angle-right', class: "icon-default") %>
-          <%= icon('fa-solid', 'arrow-right', class: "icon-hover") %>
-        </div>
-        <%= link_to "Delete", food_path(@food), data: {
-                        turbo_method: :delete,
-                        turbo_confirm: "Are you sure?"
-                      } %>
-      </li>
-    </ul>
+    <% if @is_food_owner%>
+      <ul>    
+        <li>
+          <div class="icons">
+            <%= icon('fa-solid', 'angle-right', class: "icon-default") %>
+            <%= icon('fa-solid', 'arrow-right', class: "icon-hover") %>
+          </div>
+          <%= link_to "Edit", edit_food_path(@food) %>
+        </li>
+        <li>
+          <div class="icons">
+            <%= icon('fa-solid', 'angle-right', class: "icon-default") %>
+            <%= icon('fa-solid', 'arrow-right', class: "icon-hover") %>
+          </div>
+          <%= link_to "Delete", food_path(@food), data: {
+                          turbo_method: :delete,
+                          turbo_confirm: "Are you sure?"
+                        } %>
+        </li>
+      </ul>
+    <% end %>
   </div>
 </div>

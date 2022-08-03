@@ -11,6 +11,7 @@ class FoodsController < ApplicationController
 
   def show
     @food = Food.find(params[:id])
+    @is_food_owner = @food.user == current_user
   end
 
   def new
