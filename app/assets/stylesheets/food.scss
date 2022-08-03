@@ -71,6 +71,11 @@ body.foods {
       min-width: 0;
     }
 
+    .field_with_errors {
+      display: flex;
+      flex-direction: column;
+    }
+
     input, textarea {
       padding: 0.75rem;
 
