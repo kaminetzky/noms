@@ -2,7 +2,11 @@ class MealsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @meals = Meal.where(user: current_user).order(consumed_on: :desc)
+    if current_user.nil?
+      @meals = Meal.order(consumed_on: :desc)
+    else
+      @meals = Meal.where(user: current_user).order(consumed_on: :desc)
+    end
   end
 
   def show

@@ -2,7 +2,11 @@ class FoodsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @foods = Food.where(user: current_user).order(:name)
+    if current_user.nil?
+      @foods = Food.order(:name)
+    else
+      @foods = Food.where(user: current_user).order(:name)
+    end
   end
 
   def show
