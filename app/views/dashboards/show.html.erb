@@ -73,4 +73,13 @@
     </div>
   </div>
 
+  <div class="user-session-status">
+    <% if current_user %>
+      <p class="current-user">Signed in as <%= current_user.email %></p>
+      <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete}, class: "sign-in-out" %>
+    <% else %>
+      <%= link_to "Sign in", new_user_session_path, class: "sign-in-out" %>
+    <% end %>
+  </div>
+
 </div>

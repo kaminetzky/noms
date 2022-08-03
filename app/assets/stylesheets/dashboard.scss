@@ -197,4 +197,26 @@ body.dashboards {
     transform: translate(0px, 1px);
     background-color: $color-blue-5;
   }
+
+  .user-session-status {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  p.current-user {
+    text-align: center;
+  }
+
+  a.sign-in-out {
+    text-align: center;
+    text-decoration: none;
+    color: $color-blue-6;
+    font-weight: 700;
+    transition: all ease 0.2s;
+
+    &:hover {
+    color: $color-blue-5;
+    }
+  }
 }
