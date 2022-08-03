@@ -17,29 +17,31 @@
     </div>
   </div>
 
-  <div class="block stat-block-with-title">
-    <div class="header-container">
-      <%= link_to @meal_last, class: "block-title-link" do %>
-        <h2 class="block-title">Last meal</h2>
-        <div class="icons">
-          <%= icon('fa-solid', 'angle-right', class: "icon-default") %>
-          <%= icon('fa-solid', 'arrow-right', class: "icon-hover") %>
-        </div>
-      <% end %>
-      <h2 class="food-name"><%= @meal_last.food.name %></h2>
-    </div>
+  <% if @meal_last %>
+    <div class="block stat-block-with-title">
+      <div class="header-container">
+        <%= link_to @meal_last, class: "block-title-link" do %>
+          <h2 class="block-title">Last meal</h2>
+          <div class="icons">
+            <%= icon('fa-solid', 'angle-right', class: "icon-default") %>
+            <%= icon('fa-solid', 'arrow-right', class: "icon-hover") %>
+          </div>
+        <% end %>
+        <h2 class="food-name"><%= @meal_last.food.name %></h2>
+      </div>
 
-    <div class="stat-block-multiple">
-      <div class="stat-block">
-        <h3>Calories</h3>
-        <p><%= @meal_last.calories.round %></p>
-      </div>
-      <div class="stat-block">
-        <h3>Protein</h3>
-        <p><%= @meal_last.protein.round %></p>
+      <div class="stat-block-multiple">
+        <div class="stat-block">
+          <h3>Calories</h3>
+          <p><%= @meal_last.calories.round %></p>
+        </div>
+        <div class="stat-block">
+          <h3>Protein</h3>
+          <p><%= @meal_last.protein.round %></p>
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
   
   <div class="link-block-container">
     <div class="block link-block">
