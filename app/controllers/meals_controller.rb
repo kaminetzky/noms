@@ -27,25 +27,38 @@ class MealsController < ApplicationController
 
   def edit
     @meal = Meal.find(params[:id])
-    @foods = Food.where(user: current_user).order(:name)
+
+    if @meal.user == current_user
+      @foods = Food.where(user: current_user).order(:name)
+    else
+      render file: "#{Rails.root}/public/403.html", layout: false, status: 403
+    end
   end
 
   def update
     @meal = Meal.find(params[:id])
 
-    if @meal.update(meal_params)
-      redirect_to @meal
+    if @meal.user == current_user
+      if @meal.update(meal_params)
+        redirect_to @meal
+      else
+        @foods = Food.where(user: current_user).order(:name)
+        render :edit, status: :unprocessable_entity
+      end
     else
-      @foods = Food.where(user: current_user).order(:name)
-      render :edit, status: :unprocessable_entity
+      render file: "#{Rails.root}/public/403.html", layout: false, status: 403
     end
   end
 
   def destroy
     @meal = Meal.find(params[:id])
-    @meal.destroy
 
-    redirect_to meals_path, status: :see_other
+    if @meal.user == current_user
+      @meal.destroy
+      redirect_to meals_path, status: :see_other
+    else
+      render file: "#{Rails.root}/public/403.html", layout: false, status: 403
+    end
   end
 
   private

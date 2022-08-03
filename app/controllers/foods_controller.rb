@@ -25,23 +25,34 @@ class FoodsController < ApplicationController
 
   def edit
     @food = Food.find(params[:id])
+
+    render file: "#{Rails.root}/public/403.html", layout: false, status: 403 \
+      unless @food.user == current_user
   end
 
   def update
     @food = Food.find(params[:id])
 
-    if @food.update(food_params)
-      redirect_to @food
+    if @food.user == current_user
+      if @food.update(food_params)
+        redirect_to @food
+      else
+        render :edit, status: :unprocessable_entity
+      end
     else
-      render :edit, status: :unprocessable_entity
+      render file: "#{Rails.root}/public/403.html", layout: false, status: 403
     end
   end
 
   def destroy
     @food = Food.find(params[:id])
-    @food.destroy
 
-    redirect_to foods_path, status: :see_other
+    if @food.user == current_user
+      @food.destroy
+      redirect_to foods_path, status: :see_other
+    else
+      render file: "#{Rails.root}/public/403.html", layout: false, status: 403
+    end
   end
 
   private
