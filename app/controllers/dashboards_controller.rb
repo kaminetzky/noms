@@ -6,8 +6,11 @@ class DashboardsController < ApplicationController
       meals_user = Meal.where(user: current_user)
     end
 
-    @calories_today = meals_user.today.sum(&:calories).round
-    @protein_today = meals_user.today.sum(&:protein).round
+    calories_last_days = meals_user.last_meals_calories_by_day(7)
+    protein_last_days = meals_user.last_meals_protein_by_day(7)
+
+    @calories_today = calories_last_days.values[-1]
+    @protein_today = protein_last_days.values[-1]
     @meal_last = meals_user.last
   end
 end

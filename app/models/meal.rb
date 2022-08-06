@@ -6,6 +6,18 @@ class Meal < ApplicationRecord
   validates :consumed_on, presence: true
   validates :food_id, presence: true
 
+  def self.last_meals_by_day(days)
+    group_by_day(:consumed_on, last: days, format: "%A, %B %-e")
+  end
+
+  def self.last_meals_calories_by_day(days)
+    last_meals_by_day(days).joins(:food).sum('servings*calories')
+  end
+
+  def self.last_meals_protein_by_day(days)
+    last_meals_by_day(days).joins(:food).sum('servings*protein')
+  end
+
   def self.today
     # Day starts at 6 AM
     where("consumed_on >= ?",
