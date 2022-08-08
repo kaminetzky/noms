@@ -19,6 +19,11 @@
         <% end %>
       </ul>
     </div>
+    <%== pagy_nav(@calendar[:year]) %>
+    <%== pagy_nav(@calendar[:month]) %>
+    <%== pagy_nav(@calendar[:day]) %>
+    <%== pagy_info(@pagy) %>
+    <%== @calendar[:month].label(format: '%B %-d, %Y') %>
     <%== pagy_nav(@pagy) %>
   </div>
 

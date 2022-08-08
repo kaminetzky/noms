@@ -7,7 +7,7 @@ class MealsController < ApplicationController
     else
       @meals = Meal.where(user: current_user)
     end
-    @pagy, @meals = pagy(@meals.order(consumed_on: :desc))
+    @calendar, @pagy, @meals = pagy_calendar(@meals.order(consumed_on: :desc), year: {}, month: {}, day: {})
   end
 
   def show
@@ -68,8 +68,19 @@ class MealsController < ApplicationController
   end
 
   private
-    def meal_params
-      params.require(:meal).permit(:notes, :servings,
-                                   :consumed_on, :food_id)
-    end
+
+  def meal_params
+    params.require(:meal).permit(:notes, :servings,
+                                  :consumed_on, :food_id)
+  end
+
+  def pagy_calendar_period(collection)
+    starting = collection.minimum('consumed_on')
+    ending = collection.maximum('consumed_on')
+    [starting.in_time_zone, ending.in_time_zone]
+  end
+
+  def pagy_calendar_filter(collection, from, to)
+    collection.where(consumed_on: from...to)
+  end
 end

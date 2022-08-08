@@ -42,22 +42,22 @@
 
 # Calendar extra: Add pagination filtering by calendar time unit (year, quarter, month, week, day)
 # See https://ddnexus.github.io/pagy/extras/calendar
-# require 'pagy/extras/calendar'
+require 'pagy/extras/calendar'
 # Default for each unit
 # Pagy::Calendar::Year::DEFAULT[:order]     = :asc        # Time direction of pagination
-# Pagy::Calendar::Year::DEFAULT[:format]    = '%Y'        # strftime format
+Pagy::Calendar::Year::DEFAULT[:format]    = '%Y'        # strftime format
 #
 # Pagy::Calendar::Quarter::DEFAULT[:order]  = :asc        # Time direction of pagination
 # Pagy::Calendar::Quarter::DEFAULT[:format] = '%Y-Q%q'    # strftime format
 #
 # Pagy::Calendar::Month::DEFAULT[:order]    = :asc        # Time direction of pagination
-# Pagy::Calendar::Month::DEFAULT[:format]   = '%Y-%m'     # strftime format
+Pagy::Calendar::Month::DEFAULT[:format]   = '%b'     # strftime format
 #
 # Pagy::Calendar::Week::DEFAULT[:order]     = :asc        # Time direction of pagination
 # Pagy::Calendar::Week::DEFAULT[:format]    = '%Y-%W'     # strftime format
 #
 # Pagy::Calendar::Day::DEFAULT[:order]      = :asc        # Time direction of pagination
-# Pagy::Calendar::Day::DEFAULT[:format]     = '%Y-%m-%d'  # strftime format
+Pagy::Calendar::Day::DEFAULT[:format]     = '%-d'  # strftime format
 #
 # Uncomment the following lines, if you need calendar localization without using the I18n extra
 # module LocalizePagyCalendar
@@ -140,7 +140,7 @@
 # Notice: the other frontend extras add their own framework-styled versions,
 # so require this extra only if you need the unstyled version
 # See https://ddnexus.github.io/pagy/extras/navs
-require 'pagy/extras/navs'
+# require 'pagy/extras/navs'
 
 # Semantic extra: Add nav, nav_js and combo_nav_js helpers for Semantic UI pagination
 # See https://ddnexus.github.io/pagy/extras/semantic
