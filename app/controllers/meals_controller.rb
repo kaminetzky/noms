@@ -3,10 +3,11 @@ class MealsController < ApplicationController
 
   def index
     if current_user.nil?
-      @meals = Meal.order(consumed_on: :desc)
+      @meals = Meal.all
     else
-      @meals = Meal.where(user: current_user).order(consumed_on: :desc)
+      @meals = Meal.where(user: current_user)
     end
+    @pagy, @meals = pagy(@meals.order(consumed_on: :desc))
   end
 
   def show
