@@ -6,30 +6,15 @@
   <div class="block">
     <h2>Meals</h2>
     <div class="day-group">
-      <h3>Today</h3>
+      <h3>All</h3>
       <ul>
-        <% @meals.today.includes(:food).each do |meal| %>
+        <% @meals.includes(:food).each do |meal| %>
           <li>
             <div class="icons">
               <%= icon('fa-solid', 'angle-right', class: "icon-default") %>
               <%= icon('fa-solid', 'arrow-right', class: "icon-hover") %>
             </div>
             <%= link_to "#{meal.food.name} (#{time_ago_in_words meal.consumed_on} ago)", meal %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-    
-    <div class="day-group">
-      <h3>Previous meals</h3>
-      <ul>
-        <% @meals.not_today.includes(:food).each do |meal| %>
-          <li>
-            <div class="icons">
-              <%= icon('fa-solid', 'angle-right', class: "icon-default") %>
-              <%= icon('fa-solid', 'arrow-right', class: "icon-hover") %>
-            </div>
-            <%= link_to "#{meal.food.name}", meal %>
           </li>
         <% end %>
       </ul>
