@@ -13,12 +13,8 @@
       <% if @calendar[:year].pages > 1 %>
         <%== pagy_nav(@calendar[:year]) %>
       <% end %>
-      <% if @calendar[:month].pages > 1 %>
-        <%== pagy_nav(@calendar[:month]) %>
-      <% end %>
-      <% if @calendar[:day].pages > 1 %>
-        <%== pagy_nav(@calendar[:day]) %>
-      <% end %>
+      <%== pagy_nav(@calendar[:month]) %>
+      <%== pagy_nav(@calendar[:day]) %>
       
       <%== @calendar[:day].label(format: '%B %-d, %Y') %>
 
