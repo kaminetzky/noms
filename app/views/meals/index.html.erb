@@ -6,7 +6,19 @@
   <div class="block">
     <h2>Meals</h2>
     <div class="day-group">
-      <h3>All</h3>
+
+      <% if @calendar[:year].pages > 1 %>
+        <%== pagy_nav(@calendar[:year]) %>
+      <% end %>
+      <% if @calendar[:month].pages > 1 %>
+      <%== pagy_nav(@calendar[:month]) %>
+      <% end %>
+      <% if @calendar[:day].pages > 1 %>
+      <%== pagy_nav(@calendar[:day]) %>
+      <% end %>
+      
+      <%== @calendar[:day].label(format: '%B %-d, %Y') %>
+
       <ul>
         <% @meals.includes(:food).each do |meal| %>
           <li>
@@ -19,12 +31,10 @@
         <% end %>
       </ul>
     </div>
-    <%== pagy_nav(@calendar[:year]) %>
-    <%== pagy_nav(@calendar[:month]) %>
-    <%== pagy_nav(@calendar[:day]) %>
-    <%== pagy_info(@pagy) %>
-    <%== @calendar[:month].label(format: '%B %-d, %Y') %>
+    <% if @pagy.pages > 1 %>
+    <%= @period %>
     <%== pagy_nav(@pagy) %>
+    <% end %>
   </div>
 
 </div>

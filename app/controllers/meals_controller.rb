@@ -7,7 +7,8 @@ class MealsController < ApplicationController
     else
       @meals = Meal.where(user: current_user)
     end
-    @calendar, @pagy, @meals = pagy_calendar(@meals.order(consumed_on: :desc), year: {}, month: {}, day: {})
+    @calendar, @pagy, @meals = pagy_calendar(@meals.order(consumed_on: :asc),
+                                             year: {}, month: {}, day: {})
   end
 
   def show
