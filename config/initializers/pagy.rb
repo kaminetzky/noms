@@ -245,5 +245,5 @@ Pagy::Calendar::Day::DEFAULT[:format]     = '%-d'  # strftime format
 Pagy::DEFAULT.freeze
 
 # Add :starting to attr_reader
-Pagy.class_eval{attr_reader :starting}
-Pagy.class_eval{attr_reader :ending}
+Pagy.class_eval { attr_reader :starting }
+Pagy.class_eval { attr_reader :ending }
