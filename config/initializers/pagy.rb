@@ -243,3 +243,7 @@ Pagy::Calendar::Day::DEFAULT[:format]     = '%-d'  # strftime format
 
 # When you are done setting your own default freeze it, so it will not get changed accidentally
 Pagy::DEFAULT.freeze
+
+# Add :starting to attr_reader
+Pagy.class_eval{attr_reader :starting}
+Pagy.class_eval{attr_reader :ending}

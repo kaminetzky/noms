@@ -51,7 +51,7 @@
           <%= icon('fa-solid', 'plus', class: "icon-default") %>
           <p>New</p>
         <% end %>
-        <%= link_to meals_path do %>
+        <%= link_to meals_path(last_day_params) do %>
           <%= icon('fa-solid', 'list', class: "icon-default") %>
           <p>All</p>
         <% end %>

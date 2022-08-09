@@ -7,14 +7,17 @@
     <h2>Meals</h2>
     <div class="day-group">
 
+      <%= link_to "First day", meals_path %>
+      <%= link_to "Last day", meals_path(last_day_params) %>
+
       <% if @calendar[:year].pages > 1 %>
         <%== pagy_nav(@calendar[:year]) %>
       <% end %>
       <% if @calendar[:month].pages > 1 %>
-      <%== pagy_nav(@calendar[:month]) %>
+        <%== pagy_nav(@calendar[:month]) %>
       <% end %>
       <% if @calendar[:day].pages > 1 %>
-      <%== pagy_nav(@calendar[:day]) %>
+        <%== pagy_nav(@calendar[:day]) %>
       <% end %>
       
       <%== @calendar[:day].label(format: '%B %-d, %Y') %>
