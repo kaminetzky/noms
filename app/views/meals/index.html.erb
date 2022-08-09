@@ -9,7 +9,6 @@
 
       <%= link_to "First day", meals_path %>
       <%= link_to "Last day", meals_path(last_day_params) %>
-
       <% if @calendar[:year].pages > 1 %>
         <%== pagy_nav(@calendar[:year]) %>
       <% end %>
@@ -31,8 +30,7 @@
       </ul>
     </div>
     <% if @pagy.pages > 1 %>
-    <%= @period %>
-    <%== pagy_nav(@pagy) %>
+      <%== pagy_nav(@pagy) %>
     <% end %>
   </div>
 
