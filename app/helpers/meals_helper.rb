@@ -2,8 +2,8 @@ module MealsHelper
   def last_day_params
     meals_user = current_user.nil? ? Meal.all : Meal.where(user: current_user)
 
-    starting = meals_user.minimum('consumed_on')
-    ending = meals_user.maximum('consumed_on')
+    starting = meals_user.minimum('consumed_on') - 6.hours
+    ending = meals_user.maximum('consumed_on') - 6.hours
 
     on_same_year = ending.year == starting.year
     on_same_month = ending.year == starting.year && ending.month == starting.month

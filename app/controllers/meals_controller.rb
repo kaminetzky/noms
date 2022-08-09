@@ -78,12 +78,14 @@ class MealsController < ApplicationController
   end
 
   def pagy_calendar_period(collection)
-    starting = collection.minimum('consumed_on')
-    ending = collection.maximum('consumed_on')
+    starting = collection.minimum('consumed_on') - 6.hours
+    ending = collection.maximum('consumed_on') - 6.hours
     [starting.in_time_zone, ending.in_time_zone]
   end
 
   def pagy_calendar_filter(collection, from, to)
+    from += 6.hours
+    to += 6.hours
     collection.where(consumed_on: from...to)
   end
 end
