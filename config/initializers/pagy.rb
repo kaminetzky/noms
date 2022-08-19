@@ -45,19 +45,22 @@
 require 'pagy/extras/calendar'
 # Default for each unit
 # Pagy::Calendar::Year::DEFAULT[:order]     = :asc        # Time direction of pagination
-Pagy::Calendar::Year::DEFAULT[:format]    = '%Y'        # strftime format
+Pagy::Calendar::Year::DEFAULT[:format] = '%Y' # strftime format
+Pagy::Calendar::Year::DEFAULT[:size] = [0, 1000, 1000, 0]
 #
 # Pagy::Calendar::Quarter::DEFAULT[:order]  = :asc        # Time direction of pagination
 # Pagy::Calendar::Quarter::DEFAULT[:format] = '%Y-Q%q'    # strftime format
 #
 # Pagy::Calendar::Month::DEFAULT[:order]    = :asc        # Time direction of pagination
-Pagy::Calendar::Month::DEFAULT[:format]   = '%b'     # strftime format
+Pagy::Calendar::Month::DEFAULT[:format] = '%B' # strftime format
+Pagy::Calendar::Month::DEFAULT[:size] = [0, 12, 12, 0]
 #
 # Pagy::Calendar::Week::DEFAULT[:order]     = :asc        # Time direction of pagination
 # Pagy::Calendar::Week::DEFAULT[:format]    = '%Y-%W'     # strftime format
 #
 # Pagy::Calendar::Day::DEFAULT[:order]      = :asc        # Time direction of pagination
-Pagy::Calendar::Day::DEFAULT[:format]     = '%-d'  # strftime format
+Pagy::Calendar::Day::DEFAULT[:format] = '%-d' # strftime format
+Pagy::Calendar::Day::DEFAULT[:size] = [0, 31, 31, 0]
 #
 # Uncomment the following lines, if you need calendar localization without using the I18n extra
 # module LocalizePagyCalendar
