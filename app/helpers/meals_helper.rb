@@ -17,17 +17,17 @@ module MealsHelper
       day_page: last_day_page }
   end
 
-  def prev_day_params(pagy_year, pagy_month, pagy_day)
+  def prev_day_params(calendar)
     # To be implemented
-    { year_page: pagy_year.page,
-      month_page: pagy_month.page,
-      day_page: [pagy_day.page - 1, 1].max }
+    { year_page: calendar[:year].page,
+      month_page: calendar[:month].page,
+      day_page: [calendar[:day].page - 1, 1].max }
   end
 
-  def next_day_params(pagy_year, pagy_month, pagy_day)
+  def next_day_params(calendar)
     # To be implemented
-    { year_page: pagy_year.page,
-      month_page: pagy_month.page,
-      day_page: [pagy_day.page + 1, pagy_day.pages].min }
+    { year_page: calendar[:year].page,
+      month_page: calendar[:month].page,
+      day_page: [calendar[:day].page + 1, calendar[:day].pages].min }
   end
 end
