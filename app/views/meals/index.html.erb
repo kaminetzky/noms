@@ -3,20 +3,34 @@
     <h1>Noms</h1>
   <% end %>
   
-  <div class="block">
+  <div class="block meals-index">
     <h2>Meals</h2>
-    <div class="day-group">
 
-      <%= link_to "First day", meals_path %>
-      <%= link_to "Last day", meals_path(last_day_params) %>
-      <% if @calendar[:year].pages > 1 %>
-        <%== pagy_nav(@calendar[:year]) %>
+    <div class="nav">
+      <%= link_to meals_path do %>
+        <%= icon('fa-solid', 'angles-left', title: "First day") %>
       <% end %>
-      <%== pagy_nav(@calendar[:month]) %>
-      <%== pagy_nav(@calendar[:day]) %>
-      
-      <%== @calendar[:day].label(format: '%B %-d, %Y') %>
 
+      <%= link_to meals_path(prev_day_params(@calendar)) do %>
+        <%= icon('fa-solid', 'angle-left', title: "Previous day") %>
+      <% end %>
+
+      <%== render partial: 'pagy/date_select', locals: { pagy: @calendar[:year] } %>
+      <%== render partial: 'pagy/date_select', locals: { pagy: @calendar[:month] } %>
+      <%== render partial: 'pagy/date_select', locals: { pagy: @calendar[:day] } %>
+
+      <%= link_to meals_path(next_day_params(@calendar)) do %>
+        <%= icon('fa-solid', 'angle-right', title: "Next day") %>
+      <% end %>
+
+      <%= link_to meals_path(last_day_params) do %>
+        <%= icon('fa-solid', 'angles-right', title: "Last day") %>
+      <% end %>
+    </div>
+    
+    <%== @calendar[:day].label(format: '%B %-d, %Y') %>
+      
+    <div class="day-group">
       <ul>
         <% @meals.includes(:food).each do |meal| %>
           <li>
@@ -33,5 +47,4 @@
       <%== pagy_nav(@pagy) %>
     <% end %>
   </div>
-
 </div>

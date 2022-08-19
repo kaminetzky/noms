@@ -1,0 +1,10 @@
+<% url_split = pagy_url_for(pagy, "__pagy_page__", html_escaped: true).split("__pagy_page__", 2) %>
+
+<select onChange="window.location.href=this.value">
+<% pagy.series.each do |item| %>
+  <option <%= "selected" if item.is_a? String %>
+      value=<%= url_split[0] + item.to_s + url_split[1] %>>
+    <%= pagy.label_for(item) %>
+  </option>
+<% end %>
+</select>
