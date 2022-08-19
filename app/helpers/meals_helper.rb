@@ -19,9 +19,15 @@ module MealsHelper
 
   def prev_day_params(pagy_year, pagy_month, pagy_day)
     # To be implemented
+    { year_page: pagy_year.page,
+      month_page: pagy_month.page,
+      day_page: [pagy_day.page - 1, 1].max }
   end
 
   def next_day_params(pagy_year, pagy_month, pagy_day)
     # To be implemented
+    { year_page: pagy_year.page,
+      month_page: pagy_month.page,
+      day_page: [pagy_day.page + 1, pagy_day.pages].min }
   end
 end
