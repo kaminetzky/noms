@@ -16,4 +16,12 @@ module MealsHelper
       month_page: last_month_page,
       day_page: last_day_page }
   end
+
+  def prev_day_params(pagy_year, pagy_month, pagy_day)
+    # To be implemented
+  end
+
+  def next_day_params(pagy_year, pagy_month, pagy_day)
+    # To be implemented
+  end
 end
