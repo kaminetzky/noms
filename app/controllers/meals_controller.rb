@@ -11,6 +11,9 @@ class MealsController < ApplicationController
     @calendar, @pagy, @meals = pagy_calendar(
       meals_user.order(consumed_on: :asc), year: {}, month: {}, day: {}
     )
+
+    @meals_calories = @meals.calories
+    @meals_protein = @meals.protein
   end
 
   def show

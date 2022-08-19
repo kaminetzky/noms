@@ -30,6 +30,15 @@ class Meal < ApplicationRecord
               (Time.zone.now - 6.hours).beginning_of_day + 6.hours)
   end
 
+  def self.calories
+    joins(:food).sum('servings*calories')
+  end
+
+
+  def self.protein
+    joins(:food).sum('servings*protein')
+  end
+
   def calories
     servings * food.calories
   end

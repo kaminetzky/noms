@@ -28,7 +28,9 @@
       <% end %>
     </div>
     
-    <%== @calendar[:day].label(format: '%B %-d, %Y') %>
+    <div><%== @calendar[:day].label(format: '%A, %B %-d, %Y') %></div>
+    <div><%= "Calories: #{@meals_calories.round}"%></div>
+    <div><%= "Protein: #{@meals_protein.round}"%></div>
       
     <div class="day-group">
       <ul>
