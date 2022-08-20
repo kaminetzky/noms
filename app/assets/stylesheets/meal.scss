@@ -18,6 +18,7 @@ body.meals {
     width: 100%;
     max-width: 32rem;
   }
+
   .header-link {
     text-decoration: none;
     display: flex;
@@ -140,6 +141,82 @@ body.meals {
     border-radius: 1rem;
     padding: 2rem;
     box-shadow: $shadow-2;
+    
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      font-size: 2rem;
+
+      i {
+        color: $color-blue-6;
+        text-decoration: none;
+        transition-duration: 0.2s;
+
+        &:hover {
+          color: $color-grey-4;
+          transform: scale(1.1);
+        }
+      }
+
+      select {
+        appearance: none;
+        font-size: 0.75rem;
+        font-family: inherit;
+        color: $color-blue-6;
+        padding: 0.25rem 0.5rem;
+        background-color: $color-grey-0;
+        border: solid 1px $color-blue-6;
+        border-radius: 0.75rem;
+        text-align-last: center;
+        text-align: center;
+      }
+    }
+
+    .day-data {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+
+      background-color: $color-blue-6;
+      color: $color-grey-0;
+      
+      h3, h4 {
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 400;
+        letter-spacing: 0.1em;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+      }
+
+      .stat-blocks {
+        display: flex;
+        justify-content: space-around;
+
+        .stat-block {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.25rem;
+
+          p {
+            font-size: 3rem;
+          }
+        }
+      }
+    }
 
     .day-group {
       display: flex;
@@ -147,10 +224,6 @@ body.meals {
       gap: 0.5rem;
     }
 
-    h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-    }
 
     ul {
       display: flex;

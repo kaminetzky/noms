@@ -27,10 +27,21 @@
         <%= icon('fa-solid', 'angles-right', title: "Last day") %>
       <% end %>
     </div>
-    
-    <div><%== @calendar[:day].label(format: '%A, %B %-d, %Y') %></div>
-    <div><%= "Calories: #{@meals_calories.round}"%></div>
-    <div><%= "Protein: #{@meals_protein.round}"%></div>
+  
+
+    <div class="day-data">
+      <div><h3><%== @calendar[:day].label(format: '%A') %></h3></div>
+      <div class="stat-blocks">
+        <div class="stat-block">
+          <h4>Calories</h4>
+          <p><%= @meals_calories.round %></p>
+        </div>
+        <div class="stat-block">
+          <h4>Protein</h4>
+          <p><%= @meals_protein.round %></p>
+        </div>
+      </div>
+    </div>
       
     <div class="day-group">
       <ul>
