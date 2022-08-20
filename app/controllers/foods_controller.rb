@@ -7,6 +7,7 @@ class FoodsController < ApplicationController
     else
       @foods = Food.where(user: current_user).order(:name)
     end
+    @foods_grouped_by_first_letter = @foods.group_by { |f| f.name[0] }
   end
 
   def show
