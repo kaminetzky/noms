@@ -15,9 +15,11 @@
         <%= icon('fa-solid', 'angle-left', title: "Previous day") %>
       <% end %>
 
-      <%== render partial: 'pagy/date_select', locals: { pagy: @calendar[:year] } %>
-      <%== render partial: 'pagy/date_select', locals: { pagy: @calendar[:month] } %>
-      <%== render partial: 'pagy/date_select', locals: { pagy: @calendar[:day] } %>
+      <div class="date-selects">
+        <%== render partial: 'pagy/date_select', locals: { pagy: @calendar[:year] } %>
+        <%== render partial: 'pagy/date_select', locals: { pagy: @calendar[:month] } %>
+        <%== render partial: 'pagy/date_select', locals: { pagy: @calendar[:day] } %>
+      </div>
 
       <%= link_to meals_path(next_day_params(@calendar)) do %>
         <%= icon('fa-solid', 'angle-right', title: "Next day") %>
