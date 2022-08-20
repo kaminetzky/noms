@@ -167,11 +167,14 @@ body.meals {
 
       select {
         appearance: none;
-        font-size: 0.75rem;
         font-family: inherit;
-        color: $color-blue-6;
+
+        font-size: 1rem;
         padding: 0.25rem 0.5rem;
+
+        color: $color-blue-6;
         background-color: $color-grey-0;
+
         border: solid 1px $color-blue-6;
         border-radius: 0.5rem;
       }
