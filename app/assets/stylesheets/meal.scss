@@ -209,10 +209,7 @@ body.meals {
 
       padding: 1.5rem;
       border-radius: 0.75rem;
-
-      background-color: $color-blue-6;
-      color: $color-grey-0;
-      box-shadow: $shadow-1;
+      border: 2px solid $color-grey-2;
       
       h3, h4 {
         text-transform: uppercase;
