@@ -25,9 +25,28 @@ module MealsHelper
   end
 
   def next_day_params(calendar)
-    # To be implemented
-    { year_page: calendar[:year].page,
-      month_page: calendar[:month].page,
-      day_page: [calendar[:day].page + 1, calendar[:day].pages].min }
+    next_day_page = calendar[:day].page + 1
+    next_month_page = calendar[:month].page
+    next_year_page = calendar[:year].page
+
+    if next_day_page > calendar[:day].pages
+      next_day_page = 1
+      next_month_page += 1
+    end
+
+    if next_month_page > calendar[:month].pages
+      next_month_page = 1
+      next_year_page += 1
+    end
+
+    if next_year_page > calendar[:year].pages
+      next_day_page = calendar[:day].page
+      next_month_page = calendar[:month].page
+      next_year_page = calendar[:year].page
+    end
+
+    { year_page: next_year_page,
+      month_page: next_month_page,
+      day_page: next_day_page }
   end
 end
