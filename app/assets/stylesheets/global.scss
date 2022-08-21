@@ -81,6 +81,12 @@ form {
     min-width: 0;
   }
 
+  .checkbox-pair {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
   input, textarea, select {
     padding: 0.75rem;
 
