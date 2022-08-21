@@ -2,16 +2,6 @@
 
 body.foods.index {
   .block {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 2rem;
-
-    h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-    }
-
     .letter-group {
       display: flex;
       flex-direction: column;

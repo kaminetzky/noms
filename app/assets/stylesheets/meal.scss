@@ -1,17 +1,7 @@
 @import "constants.scss";
 
 body.meals.index {
-  .block {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 2rem;
-    
-    h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-    }
-
+  .block { 
     .nav {
       display: flex;
       justify-content: space-between;

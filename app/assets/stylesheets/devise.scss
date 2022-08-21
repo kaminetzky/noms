@@ -1,12 +1,6 @@
 @import "constants.scss";
 
 body.sessions, body.registrations, body.passwords {
-  .block {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
   input[type="submit"] {
     width: 100%;
   }
