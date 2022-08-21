@@ -6,7 +6,7 @@
     <% @foods_grouped_by_first_letter.keys.each do |letter| %>
       <div class="letter-group">
         <h3><%= letter %></h3>
-        <ul>
+        <ul class="list-with-links">
         <% @foods_grouped_by_first_letter[letter].each do |food| %>
           <li>
             <div class="icons">
