@@ -1,13 +1,17 @@
 @import "constants.scss";
 
 body.dashboards {
+  .block {
+    padding: 1.5rem;
+  }
+
   .stat-block-with-title {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
   }
 
-  .stat-block-with-title .header-container {
+  .header-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;

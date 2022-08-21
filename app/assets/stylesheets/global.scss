@@ -16,18 +16,16 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 2rem;
 
   background-color: $color-grey-1;
   color: $color-blue-6;
-
-  padding: 2rem;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-
   width: 100%;
   max-width: 32rem;
 }
@@ -35,7 +33,6 @@ body {
 .website-title {
   align-self: center;
 
-  
   font-size: 4.5rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -56,6 +53,91 @@ body {
 .block {
   background-color: $color-grey-0;
   border-radius: 1rem;
-  padding: 1.5rem;
   box-shadow: $shadow-2;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .row {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .input-pair {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    flex: auto;
+    min-width: 0;
+  }
+
+  input, textarea, select {
+    padding: 0.75rem;
+
+    background-color: $color-grey-0;
+    color: $color-blue-6;
+
+    font-size: 1rem;
+    font-family: inherit;
+    
+    border: 1px solid $color-grey-1;
+    border-radius: 0.5rem;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button,
+  select {
+    appearance: none;
+  }
+
+  .select-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    
+    select {
+      width: 100%;
+      padding-right: 2rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    i {
+      position: absolute;
+      right: 1rem;
+      transition: all ease 0.2s;
+      pointer-events: none;
+    }
+
+    &:hover i {
+      transform: scale(1.25);
+    }
+  }
+
+  input[type="submit"] {
+    align-self: flex-end;
+    padding: 0.75rem 1.5rem;
+    background-color: $color-blue-6;
+    color: $color-blue-0;
+    font-weight: 700;
+    appearance: none;
+    border: none;
+    box-shadow: $shadow-0;
+    transition: all ease 0.2s;
+
+    &:hover {
+      background-color: $color-blue-5;
+      box-shadow: none;
+      transform: translate(0px, 1px);
+    }
+  }
 }

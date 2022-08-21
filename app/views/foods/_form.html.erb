@@ -1,55 +1,55 @@
-<%= form_with model: food do |form| %>
-  <h2><%= title %></h2>
-
-  <% if food.errors.any? %>
-    <div id="error_explanation">
-      <p><%= pluralize(food.errors.count, "error") %> prevented this food from being saved:</p>
-      <ul>
-        <% food.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="row">
+<div class="block">
+  <%= form_with model: food do |form| %>
+    <h2><%= title %></h2>
+  
+    <% if food.errors.any? %>
+      <div id="error_explanation">
+        <p><%= pluralize(food.errors.count, "error") %> prevented this food from being saved:</p>
+        <ul>
+          <% food.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
     <div class="input-pair">
       <%= form.label :name %>
       <%= form.text_field :name %>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="input-pair">
-      <%= form.label :serving_size %>
-      <%= form.number_field :serving_size, step: 0.1 %>
+  
+    <div class="row">
+      <div class="input-pair">
+        <%= form.label :serving_size %>
+        <%= form.number_field :serving_size, step: 0.1 %>
+      </div>
+      <div class="input-pair">
+        <%= form.label :serving_unit %>
+        <%= form.text_field :serving_unit %>
+      </div>
     </div>
-    <div class="input-pair">
-      <%= form.label :serving_unit %>
-      <%= form.text_field :serving_unit %>
+  
+    <div class="row">
+      <div class="input-pair">
+        <%= form.label :calories %>
+        <%= form.number_field :calories, step: 0.1 %>
+      </div>
+      <div class="input-pair">
+        <%= form.label :protein %>
+        <%= form.number_field :protein, step: 0.1 %>
+      </div>
     </div>
-  </div>
-
-  <div class="row">
+  
     <div class="input-pair">
-      <%= form.label :calories %>
-      <%= form.number_field :calories, step: 0.1 %>
+      <%= form.label :notes %>
+      <%= form.text_area :notes %>
     </div>
+  
     <div class="input-pair">
-      <%= form.label :protein %>
-      <%= form.number_field :protein, step: 0.1 %>
+      <%= form.label :is_favorite, "Favorite" %>
+      <%= form.check_box :is_favorite %>
     </div>
-  </div>
-
-  <div class="input-pair">
-    <%= form.label :notes %>
-    <%= form.text_area :notes %>
-  </div>
-
-  <div class="input-pair">
-    <%= form.label :is_favorite, "Favorite" %>
-    <%= form.check_box :is_favorite %>
-  </div>
-
-  <%= form.submit button_text %>
-<% end %>
+  
+    <%= form.submit button_text %>
+  <% end %>
+</div>

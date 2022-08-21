@@ -1,46 +1,48 @@
-<%= form_with model: meal do |form| %>
-  <h2><%= title %></h2>
-
-  <% if meal.errors.any? %>
-    <div id="error_explanation">
-      <p><%= pluralize(meal.errors.count, "error") %> prevented this meal from being saved:</p>
-      <ul>
-        <% meal.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<div class="block">
+  <%= form_with model: meal do |form| %>
+    <h2><%= title %></h2>
   
-  <div class="input-pair">
-    <%= form.label :food_id %>
-    <div class="select-wrapper">
-      <%= form.grouped_collection_select :food_id,
-        group_by_favorite(foods),
-        -> (el) {el[:foods]},
-        -> (el) {el[:is_favorite] ? 'Favorites' : 'Other'},
-        :id,
-        -> (f) {"#{f.name} (#{f.serving})"},
-        include_blank: true  %>
-      <%= icon('fa-solid', 'caret-down') %>
+    <% if meal.errors.any? %>
+      <div id="error_explanation">
+        <p><%= pluralize(meal.errors.count, "error") %> prevented this meal from being saved:</p>
+        <ul>
+          <% meal.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="input-pair">
+      <%= form.label :food_id %>
+      <div class="select-wrapper">
+        <%= form.grouped_collection_select :food_id,
+          group_by_favorite(foods),
+          -> (el) {el[:foods]},
+          -> (el) {el[:is_favorite] ? 'Favorites' : 'Other'},
+          :id,
+          -> (f) {"#{f.name} (#{f.serving})"},
+          include_blank: true  %>
+        <%= icon('fa-solid', 'caret-down') %>
+      </div>
     </div>
-  </div>
-
-
-  <div class="input-pair">
-    <%= form.label :servings %>
-    <%= form.number_field :servings, step: 0.1  %>
-  </div>
-
-  <div class="input-pair">
-    <%= form.label :consumed_on %>
-    <%= form.datetime_local_field :consumed_on, step: 1 %>
-  </div>
-
-  <div class="input-pair">
-    <%= form.label :notes %>
-    <%= form.text_area :notes %>
-  </div>
-
-  <%= form.submit button_text %>
-<% end %>
+  
+  
+    <div class="input-pair">
+      <%= form.label :servings %>
+      <%= form.number_field :servings, step: 0.1  %>
+    </div>
+  
+    <div class="input-pair">
+      <%= form.label :consumed_on %>
+      <%= form.datetime_local_field :consumed_on, step: 1 %>
+    </div>
+  
+    <div class="input-pair">
+      <%= form.label :notes %>
+      <%= form.text_area :notes %>
+    </div>
+  
+    <%= form.submit button_text %>
+  <% end %>
+</div>
