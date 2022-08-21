@@ -39,7 +39,6 @@ body.dashboards.show {
       position: relative;
       
       i {
-        position: absolute;
         transition: all ease 0.2s;
       }
 
@@ -49,12 +48,14 @@ body.dashboards.show {
       
       .icon-hover {
         opacity: 0;
+        position: absolute;
         left: -6px;
       }
     }
 
     &:hover {
       color: $color-grey-3;
+      
       .block-title {
         color: inherit;
       }
@@ -160,7 +161,6 @@ body.dashboards.show {
 
     flex: 0 0 0;
   }
-
 
   .link-buttons a:hover {
     box-shadow: none;
