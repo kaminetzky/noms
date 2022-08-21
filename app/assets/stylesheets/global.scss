@@ -77,6 +77,27 @@ form {
     font-weight: 700;
   }
 
+  #error_explanation {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    h2 {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    li::before {
+      content: "• "
+    }
+  }
+
   .row {
     display: flex;
     gap: 1.5rem;

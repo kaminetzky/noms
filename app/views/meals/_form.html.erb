@@ -4,7 +4,7 @@
   
     <% if meal.errors.any? %>
       <div id="error_explanation">
-        <p><%= pluralize(meal.errors.count, "error") %> prevented this meal from being saved:</p>
+        <h3><%= pluralize(meal.errors.count, "error") %> prevented this meal from being saved:</h3>
         <ul>
           <% meal.errors.each do |error| %>
             <li><%= error.full_message %></li>
