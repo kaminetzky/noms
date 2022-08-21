@@ -1,6 +1,6 @@
 @import "constants.scss";
 
-body.sessions {
+body.sessions, body.registrations {
   .block {
     display: flex;
     flex-direction: column;
@@ -15,5 +15,6 @@ body.sessions {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    align-items: center;
   }
 }
