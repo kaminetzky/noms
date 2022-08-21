@@ -1,13 +1,61 @@
+@import "constants.scss";
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-body {
-  font-family: Montserrat, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue; 
-}
-
 .notice, .alert {
   margin-top: 1rem;
+}
+
+body {
+  font-family: Montserrat, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue; 
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: $color-grey-1;
+  color: $color-blue-6;
+
+  padding: 2rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  width: 100%;
+  max-width: 32rem;
+}
+
+.website-title {
+  align-self: center;
+
+  
+  font-size: 4.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  color: $color-blue-6;
+
+  transition: all ease 0.2s;
+
+  &:hover {
+    h1 {
+      color: $color-blue-5;
+    }
+  }
+}
+
+.block {
+  background-color: $color-grey-0;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: $shadow-2;
 }

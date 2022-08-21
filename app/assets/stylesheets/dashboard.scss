@@ -1,40 +1,6 @@
 @import "constants.scss";
 
 body.dashboards {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  background-color: $color-grey-1;
-  color: $color-blue-6;
-
-  padding: 2rem;
-
-  .container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-
-    width: 100%;
-    max-width: 32rem;
-  }
-
-  h1 {
-    font-size: 4.5rem;
-    color: $color-blue-6;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-align: center;
-    text-transform: uppercase;
-  }
-
-  .block {
-    background-color: $color-grey-0;
-    border-radius: 1rem;
-    padding: 1.5rem;
-    box-shadow: $shadow-2;
-  }
-
   .stat-block-with-title {
     display: flex;
     flex-direction: column;

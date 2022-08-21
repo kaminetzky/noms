@@ -1,7 +1,5 @@
 <div class="container">
-  <%= link_to root_path, class: "header-link" do %>
-    <h1>Noms</h1>
-  <% end %>
+  <%= render 'shared/website_title'%>
   
   <%= render "form", meal: @meal, foods: @foods, title: "New meal", button_text: "Create meal" %>
 </div>
