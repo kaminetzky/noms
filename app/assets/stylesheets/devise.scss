@@ -1,0 +1,19 @@
+@import "constants.scss";
+
+body.sessions {
+  .block {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  input[type="submit"] {
+    width: 100%;
+  }
+
+  .devise-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
