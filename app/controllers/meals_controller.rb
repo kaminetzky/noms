@@ -67,7 +67,7 @@ class MealsController < ApplicationController
 
     if @meal.user == current_user
       @meal.destroy
-      redirect_to meals_path, status: :see_other
+      redirect_to meals_path(last_day_params), status: :see_other
     else
       render file: "#{Rails.root}/public/403.html", layout: false, status: 403
     end
