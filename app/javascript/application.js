@@ -2,3 +2,4 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 import "custom/turbo-confirm-cache-fix"
+import "custom/servings-buttons"
