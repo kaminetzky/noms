@@ -21,7 +21,7 @@
     <div class="row">
       <div class="input-pair">
         <%= form.label :serving_size %>
-        <%= form.number_field :serving_size, step: 0.1 %>
+        <%= form.number_field :serving_size, step: 'any' %>
       </div>
       <div class="input-pair">
         <%= form.label :serving_unit %>
@@ -32,11 +32,11 @@
     <div class="row">
       <div class="input-pair">
         <%= form.label :calories %>
-        <%= form.number_field :calories, step: 0.1 %>
+        <%= form.number_field :calories, step: 'any' %>
       </div>
       <div class="input-pair">
         <%= form.label :protein %>
-        <%= form.number_field :protein, step: 0.1 %>
+        <%= form.number_field :protein, step: 'any' %>
       </div>
     </div>
   
