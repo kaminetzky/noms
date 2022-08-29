@@ -135,6 +135,8 @@ form {
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button,
   select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
   }
 
@@ -168,6 +170,8 @@ form {
     background-color: $color-blue-6;
     color: $color-blue-0;
     font-weight: 700;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     border: none;
     box-shadow: $shadow-0;
