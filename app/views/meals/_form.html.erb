@@ -30,7 +30,7 @@
   
     <div class="input-pair">
       <%= form.label :servings %>
-      <%= form.number_field :servings, step: 'any' %>
+      <%= form.number_field :servings, min: 0.000001, step: 'any' %>
     </div>
   
     <div class="input-pair">
