@@ -132,6 +132,16 @@ form {
     border-radius: 0.5rem;
   }
 
+  input[type="datetime-local"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &::-webkit-date-and-time-value {
+      text-align: left;
+    }
+  }
+
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button,
   select {
