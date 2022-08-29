@@ -3,10 +3,14 @@
 
   <div class="block">
     <h2><%= @meal.food.name %></h2>
-    <p><strong>Servings:</strong> <%= @meal.servings %></p>
+    <p><strong>Serving:</strong> <%= "#{number_with_precision(
+      @meal.food.serving_size * @meal.servings,
+      strip_insignificant_zeros: true)} #{@meal.food.serving_unit}" %></p>
     <p><strong>Datetime:</strong> <%= @meal.consumed_on.to_formatted_s(:long) %></p>
-    <p><strong>Total calories:</strong> <%= @meal.calories %></p>
-    <p><strong>Total protein:</strong> <%= @meal.protein %></p>
+    <p><strong>Total calories:</strong> <%= number_with_precision(
+      @meal.calories, strip_insignificant_zeros: true) %></p>
+    <p><strong>Total protein:</strong> <%= number_with_precision(
+      @meal.protein, strip_insignificant_zeros: true) %></p>
     
     <% unless @meal.notes.blank?%>
     <p><strong>Notes:</strong> <%= @meal.notes %></p>

@@ -7,8 +7,4 @@ class Food < ApplicationRecord
   validates :serving_unit, presence: true
   validates :calories, comparison: { greater_than_or_equal_to: 0 }
   validates :protein, comparison: { greater_than_or_equal_to: 0 }
-
-  def serving
-    "#{serving_size} #{serving_unit}"
-  end
 end

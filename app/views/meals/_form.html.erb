@@ -21,7 +21,8 @@
           -> (el) {el[:foods]},
           -> (el) {el[:is_favorite] ? 'Favorites' : 'Other'},
           :id,
-          -> (f) {"#{f.name} (#{f.serving})"},
+          -> (f) {"#{f.name} (#{number_with_precision(@f.serving_size,
+          strip_insignificant_zeros: true)} #{@f.serving_unit})"},
           include_blank: true  %>
         <%= icon('fa-solid', 'caret-down') %>
       </div>
