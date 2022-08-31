@@ -1,3 +1,7 @@
+<% content_for :head do %>
+  <meta name="turbo-visit-control" content="reload">
+<% end %>
+
 <div class="block">
   <%= form_with model: meal do |form| %>
     <h2><%= title %></h2>
