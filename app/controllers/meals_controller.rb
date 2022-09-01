@@ -1,5 +1,6 @@
 class MealsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  include MealsHelper
 
   def index
     if current_user.nil?
