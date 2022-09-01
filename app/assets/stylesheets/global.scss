@@ -113,6 +113,40 @@ form {
     min-width: 0;
   }
 
+  .small-button-row {
+    display: flex;
+    gap: 0.25rem;
+
+    button {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+
+      flex: 1 1 0;
+      padding: 0.5rem;
+      font-size: 0.75rem;
+      
+      border: 1px solid $color-grey-1;
+      border-radius: 0.5rem;
+      box-shadow: $shadow-0;
+
+      background-color: $color-grey-0;
+      color: $color-blue-6;
+
+      transition: all ease 0.2s;
+
+      &:hover {
+        box-shadow: none;
+        transform: translate(0px, 1px);
+      }
+
+      &:active {
+        background-color: $color-blue-6;
+        color: $color-grey-0;
+      }
+    }
+  }
+
   .checkbox-pair {
     display: flex;
     gap: 0.5rem;
