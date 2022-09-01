@@ -1,6 +1,7 @@
 <% content_for :head do %>
   <meta name="turbo-visit-control" content="reload">
   <%= javascript_include_tag "servings-buttons" %>
+  <%= javascript_include_tag "time-ago-buttons" %>
 <% end %>
 
 <div class="block">
@@ -49,6 +50,13 @@
     <div class="input-pair">
       <%= form.label :consumed_on %>
       <%= form.datetime_local_field :consumed_on, step: 1 %>
+      <div class="small-button-row">
+        <button class="time-ago-button" type="button">0:00</button>
+        <button class="time-ago-button" type="button">0:15</button>
+        <button class="time-ago-button" type="button">0:30</button>
+        <button class="time-ago-button" type="button">1:00</button>
+        <button class="time-ago-button" type="button">2:00</button>
+      </div>
     </div>
   
     <div class="input-pair">
