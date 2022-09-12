@@ -16,7 +16,7 @@ module Meals
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
-    config.time_zone = "Caracas"
+    config.time_zone = "Santiago"
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
