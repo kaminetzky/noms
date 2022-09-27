@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }
 
   function parse_time_ago(str) {
-    const str_split = str.split(':');
+    const str_split = str.slice(1).split(':');
     return (+str_split[0] * 60) + (+str_split[1]);
   }
 
