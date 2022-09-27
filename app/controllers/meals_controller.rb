@@ -10,7 +10,7 @@ class MealsController < ApplicationController
     end
 
     @calendar, @pagy, @meals = pagy_calendar(
-      meals_user.order(consumed_on: :asc), year: {}, month: {}, day: {}
+      meals_user.order(consumed_on: :desc), year: {}, month: {}, day: {}
     )
 
     @meals_calories = @meals.calories
