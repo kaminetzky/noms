@@ -5,7 +5,7 @@ module MealsHelper
     return { year_page: 1, month_page: 1, day_page: 1 } if meals_user.empty?
 
     starting = meals_user.minimum('consumed_on') - 6.hours
-    ending = meals_user.maximum('consumed_on') - 6.hours
+    ending = Time.zone.now - 6.hours
 
     on_same_year = ending.year == starting.year
     on_same_month = on_same_year && ending.month == starting.month
