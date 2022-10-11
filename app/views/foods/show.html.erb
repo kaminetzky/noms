@@ -15,7 +15,7 @@
       </p>
     <% end %>
 
-    <% if current_user != @food.user%>
+    <% unless @is_food_owner %>
       <p><strong>Creator:</strong> <%= @food.user.email %></p>
     <% end %>
     <p><strong>Serving:</strong> <%= "#{number_with_precision(

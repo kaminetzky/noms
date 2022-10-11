@@ -7,7 +7,7 @@
 
   <div class="block">
     <h2><%= @meal.food.name %></h2>
-    <% if current_user != @meal.user%>
+    <% unless @is_meal_owner %>
       <p><strong>Creator:</strong> <%= @meal.user.email %></p>
     <% end %>
     <p><strong>Serving:</strong> <%= "#{number_with_precision(
