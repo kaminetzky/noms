@@ -52,7 +52,7 @@ Pagy::Calendar::Year::DEFAULT[:size] = [0, 1000, 1000, 0]
 # Pagy::Calendar::Quarter::DEFAULT[:format] = '%Y-Q%q'    # strftime format
 #
 # Pagy::Calendar::Month::DEFAULT[:order]    = :asc        # Time direction of pagination
-Pagy::Calendar::Month::DEFAULT[:format] = '%B' # strftime format
+Pagy::Calendar::Month::DEFAULT[:format] = '%b' # strftime format
 Pagy::Calendar::Month::DEFAULT[:size] = [0, 12, 12, 0]
 #
 # Pagy::Calendar::Week::DEFAULT[:order]     = :asc        # Time direction of pagination
