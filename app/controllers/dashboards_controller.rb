@@ -11,6 +11,6 @@ class DashboardsController < ApplicationController
 
     @calories_today = calories_last_days.values[-1]
     @protein_today = protein_last_days.values[-1]
-    @meal_last = meals_user.last
+    @meal_last = meals_user.order(:consumed_on).last
   end
 end
