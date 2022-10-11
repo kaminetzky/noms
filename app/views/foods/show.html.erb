@@ -29,7 +29,14 @@
     <% end %>
     
     <% if @is_food_owner%>
-      <ul class="list-with-links">    
+      <ul class="list-with-links">
+        <li>
+          <div class="icons">
+            <%= icon('fa-solid', 'angle-right', class: "icon-default") %>
+            <%= icon('fa-solid', 'arrow-right', class: "icon-hover") %>
+          </div>
+          <%= link_to "New meal", new_meal_path(food_id: @food.id) %>
+        </li>
         <li>
           <div class="icons">
             <%= icon('fa-solid', 'angle-right', class: "icon-default") %>
