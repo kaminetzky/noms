@@ -7,6 +7,9 @@
 
   <div class="block">
     <h2><%= @meal.food.name %></h2>
+    <% if current_user != @meal.user%>
+      <p><strong>Creator:</strong> <%= @meal.user.email %></p>
+    <% end %>
     <p><strong>Serving:</strong> <%= "#{number_with_precision(
       @meal.food.serving_size * @meal.servings,
       strip_insignificant_zeros: true)} #{@meal.food.serving_unit}" %></p>
