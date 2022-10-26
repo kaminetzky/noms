@@ -6,7 +6,7 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Meals
+module Noms
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
@@ -16,7 +16,11 @@ module Meals
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
-    config.time_zone = "Santiago"
+    config.time_zone = 'Santiago'
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.action_view.field_error_proc = proc { |html_tag, _|
+      html_tag
+    }
   end
 end
